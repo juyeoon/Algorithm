@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.math.BigInteger;
 
 // BigInteger 사용하면 100점(long으로는 부족함)
-public class B15829_Hashing {
+public class B15829_Hashing_1 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int L = Integer.parseInt(br.readLine()); // 문자열 길이
