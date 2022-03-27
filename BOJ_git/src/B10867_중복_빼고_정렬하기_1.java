@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 // Set과 1차원 배열 정렬 사용 //25416sKB 288ms
-public class B10867_중복_빼고_정렬하기 {
+public class B10867_중복_빼고_정렬하기_1 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
