@@ -12,7 +12,7 @@ public class B10814_나이순_정렬 {
 		Member m[] = new Member[N]; // Member 배열
 		for (int i = 0; i < N; i++) {
 			String s[] = br.readLine().split(" ");
-			m[i] = new Member(i, Integer.parseInt(s[0]), s[1]);
+			m[i] = new Member(Integer.parseInt(s[0]), s[1]);
 		} // input
 		Arrays.sort(m); // 정렬
 		// 출력
@@ -25,12 +25,10 @@ public class B10814_나이순_정렬 {
 }
 
 class Member implements Comparable {
-	int no; // 순서
 	int age; // 나이
 	String name; // 이름
 
-	public Member(int no, int age, String name) {
-		this.no = no;
+	public Member(int age, String name) {
 		this.age = age;
 		this.name = name;
 	}
@@ -38,11 +36,11 @@ class Member implements Comparable {
 	@Override
 	public int compareTo(Object o) { // 비교
 		Member m = (Member) o;
-		if (this.age == m.age) { // 나이가 같으면
-			return this.no - m.no; // 순서 오름차순으로
-		} else if (this.age > m.age)
+		if (this.age > m.age) {
 			return 1;
-		else {
+		} else if (this.age == m.age) { // 들어온 순서로 정렬됨
+			return 0;
+		} else {
 			return -1;
 		}
 	}
