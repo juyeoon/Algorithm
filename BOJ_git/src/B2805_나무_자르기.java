@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-// 이분 탐색 - 나무 길이로
+// 이분 탐색 - 나무 길이를 기준으로
 public class B2805_나무_자르기 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
