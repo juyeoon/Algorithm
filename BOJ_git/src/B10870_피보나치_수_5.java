@@ -16,7 +16,7 @@ public class B10870_피보나치_수_5 {
 			for (int i = 2; i <= n; i++) { // dp에 값 넣기
 				dp[i] = dp[i - 1] + dp[i - 2];
 			}
-			System.out.println(dp[n]); // 출력ㄴ
+			System.out.println(dp[n]); // 출력
 		}
 		br.close();
 	}
