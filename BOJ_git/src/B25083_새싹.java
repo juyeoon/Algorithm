@@ -7,5 +7,5 @@ public class B25083_새싹 {
 		System.out.println("   `~\\/");
 		System.out.println("      |");
 		System.out.println("      |");
-	}
+	} 
 }
