@@ -2,21 +2,21 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-// ÀÔ·Â ¹®ÀÚ¿­ ±æÀÌ Ã¼Å©
-public class B25372_¼ºÅÃÀÌÀÇ_Àº¹ĞÇÑ_ºñ¹Ğ¹øÈ£ {
+// ë¬¸ìì—´ ê¸¸ì´ ì²´í¬
+public class B25372_ì„±íƒì´ì˜_ì€ë°€í•œ_ë¹„ë°€ë²ˆí˜¸ {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
-		int N = Integer.parseInt(br.readLine()); // ºñ¹Ğ¹øÈ£ °³¼ö
+		int N = Integer.parseInt(br.readLine()); // ë¹„ë°€ë²ˆí˜¸ ê°œìˆ˜
 		for (int tc = 0; tc < N; tc++) {
-			String s = br.readLine(); // ºñ¹Ğ¹øÈ£ ¹®ÀÚ¿­
-			if (s.length() >= 6 && s.length() <= 9) { // 6ÀÚ ÀÌ»ó 9ÀÚ ÀÌÇÏ
-				sb.append("yes\n");
-			} else {
-				sb.append("no\n");
+			String s = br.readLine(); // ë¹„ë°€ë²ˆí˜¸ ë¬¸ìì—´
+			if (s.length() >= 6 && s.length() <= 9) { // 6ì ì´ìƒ 9ì ì´í•˜ë©´
+				sb.append("yes\n"); // yes
+			} else { // ê·¸ ì™¸ëŠ”
+				sb.append("no\n"); // no
 			}
 		}
-		System.out.println(sb); // Ãâ·Â
+		System.out.println(sb); // ì¶œë ¥
 		br.close();
 	}
 }
