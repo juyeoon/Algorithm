@@ -11,7 +11,7 @@ public class B2491_수열 {
 		for (int i = 0; i < N; i++) { // input n[]
 			n[i] = Integer.parseInt(s[i]);
 		}
-		int maxIn = 1; // 최대로 증가한 길이
+		int maxIn = 1; // 최대로 증가한 길이 
 		int maxDe = 1; // 최대로 감소한 길이
 		int cntIn = 1; // 연속으로 증가한 길이
 		int cntDe = 1; // 연속으로 감소한 길이
