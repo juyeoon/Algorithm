@@ -13,7 +13,7 @@ public class B12779_상품_is_뭔들 {
 		long b = Long.parseLong(st.nextToken());
 		long cnt = 0; // a와 b 사이의 제곱수의 개수
 		long temp = (long) Math.sqrt(a); // a 제곱근
-		for (long i = temp;; i++) {
+		for (long i = temp;; i++) { // 제곱수 구하기
 			if (i * i > b)
 				break;
 			if (i * i <= b && i * i > a)
