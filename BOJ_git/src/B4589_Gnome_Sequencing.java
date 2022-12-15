@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 
 // 입력 받은 세 수가 오름차순 정렬이거나 내림차순 정렬이면 Ordered
 // 그 외에는 Unordered 출력
-public class Main {
+public class B4589_Gnome_Sequencing {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
