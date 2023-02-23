@@ -10,10 +10,10 @@ public class B13597_Tri_du {
 		String s[] = br.readLine().split(" ");
 		int A = Integer.parseInt(s[0]);
 		int B = Integer.parseInt(s[1]);
-		if (A == B) {
-			System.out.println(A);
-		} else {
-			System.out.println(Math.max(A, B));
+		if (A == B) { // 두 숫자가 같으면
+			System.out.println(A); // A나 B 출력
+		} else { // 두 숫자가 다르면
+			System.out.println(Math.max(A, B)); // 최댓값 출력
 		}
 		br.close();
 	}
