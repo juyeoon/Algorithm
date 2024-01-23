@@ -13,7 +13,7 @@ public class B1247_부호 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
-		for (int tc = 0; tc < 3; tc++) { // 3개의 테스트케이스 
+		for (int tc = 0; tc < 3; tc++) { // 3개의 테스트케이스
 			int N = Integer.parseInt(br.readLine()); // 하나의 테스트케이스 안의 정수 개수
 			BigInteger sum = BigInteger.ZERO; // 합
 			for (int i = 0; i < N; i++) {
