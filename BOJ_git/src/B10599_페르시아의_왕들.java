@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 
 // 최소 나이 => 사망일 범위의 시작값(c) - 출생일 범위의 끝값(b)
 // 최대 나이 => 사망일 범위의 끝값(d) - 출생일 범위의 시작값(a)
-public class B15633_Fan_Death {
+public class B10599_페르시아의_왕들 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
