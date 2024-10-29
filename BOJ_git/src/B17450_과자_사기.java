@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 // 가성비 = (무게 * 10) / (가격 * 10 + (가격 * 10이 5000원 이상이면 - 500)
-// 반복문을 사용하기 위해 max값을 따로 두어 반복할 때마다 비교하여 갱신하는 방법 사용
+// 반복문을 사용하기 위해 max값을 따로 두어 반복할 때마다 비교하여 갱신하는 방법 사용. 
 public class B17450_과자_사기 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
