@@ -2,20 +2,20 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-// ±×¸®µğ ¹æ½ÄÀ¸·Î °¡Àå ¾Õ¿¡ Á¤·ÄµÇ´Â °ªÀº ÃÖ´ëÇÑ 2°³¾¿ ¹­¾úÀ» ¶§ ÇÑ ¹­À½ ´ç 1 2 Ãâ·Â
-// ÇÏ³ª°¡ ³²À¸¸é(¹®¾î ¼ö°¡ È¦¼ö¸é) 3(1Àº ÀÌ¹Ì ½è±â ¶§¹®¿¡ °¡´ÉÇÑ °ªÀº 3) Ãâ·Â
-public class B21313_¹®¾î {
+// ê·¸ë¦¬ë”” ë°©ì‹ìœ¼ë¡œ ê°€ì¥ ì•ì— ì •ë ¬ë˜ëŠ” ê°’ì€ ìµœëŒ€í•œ 2ê°œì”© ë¬¶ì—ˆì„ ë•Œ í•œ ë¬¶ìŒ ë‹¹ 1 2 ì¶œë ¥
+// í•˜ë‚˜ê°€ ë‚¨ìœ¼ë©´(ë¬¸ì–´ ìˆ˜ê°€ í™€ìˆ˜ë©´) 3(1ì€ ì´ë¯¸ ì¼ê¸° ë•Œë¬¸ì— ê°€ëŠ¥í•œ ê°’ì€ 3) ì¶œë ¥
+public class B21313_ë¬¸ì–´ {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
-		int N = Integer.parseInt(br.readLine()); // ¹®¾î °³¼ö
-		for (int i = 0; i < N - 1; i += 2) { // ¹®¾î°¡ ¸ğÀÚ¸£Áö ¾ÊÀ» ¶§±îÁö 2°³¾¿ ¹­¾î¼­ 1 2 Ãâ·Â
+		int N = Integer.parseInt(br.readLine()); // ë¬¸ì–´ ê°œìˆ˜
+		for (int i = 0; i < N - 1; i += 2) { // ë¬¸ì–´ê°€ ëª¨ìë¥´ì§€ ì•Šì„ ë•Œê¹Œì§€ 2ê°œì”© ë¬¶ì–´ì„œ 1 2 ì¶œë ¥
 			sb.append("1 2 ");
 		}
-		if (N % 2 == 1) { // ³²Àº ¹®¾î°¡ ÀÖÀ¸¸é 3
+		if (N % 2 == 1) { // ë‚¨ì€ ë¬¸ì–´ê°€ ìˆìœ¼ë©´ 3
 			sb.append("3 ");
 		}
-		System.out.println(sb); // Ãâ·Â
+		System.out.println(sb); // ì¶œë ¥
 		br.close();
 	}
 }
