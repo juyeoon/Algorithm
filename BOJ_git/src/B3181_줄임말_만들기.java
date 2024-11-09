@@ -3,21 +3,21 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-// ÀÔ·Â ¹®ÀÚ¿­À» °ø¹éÀ¸·Î ºĞ¸®ÇÏ°í Ã¹¹øÂ° ´Ü¾î¸¦ Á¦¿ÜÇÑ ´Ü¾îµéÀ» Ã¼Å©
-// Ã¹ ¹øÂ° ´Ü¾î´Â ¾î¶² ´Ü¾îµç »ó°ü¾øÀÌ Ã¹ ¹®ÀÚ Ãâ·Â ÀúÀå
-// µÎ ¹øÂ° ´Ü¾îºÎÅÍ ¹«½ÃÇÒ ¹®ÀÚÀÎÁö È®ÀÎ ÈÄ ¹«½ÃÇÒ ¹®Áö°¡ ¾Æ´Ï¸é Ã¹ ¹®ÀÚ Ãâ·Â ÀúÀå
-// Ãâ·Â ÀúÀåµÈ ¹®ÀÚ¿­À» ¸ğµÎ ´ë¹®ÀÚ·Î ¹Ù²Û ÈÄ Ãâ·Â
-public class B3181_ÁÙÀÓ¸»_¸¸µé±â {
+// ì…ë ¥ ë¬¸ìì—´ì„ ê³µë°±ìœ¼ë¡œ ë¶„ë¦¬í•˜ê³  ì²«ë²ˆì§¸ ë‹¨ì–´ë¥¼ ì œì™¸í•œ ë‹¨ì–´ë“¤ì„ ì²´í¬
+// ì²« ë²ˆì§¸ ë‹¨ì–´ëŠ” ì–´ë–¤ ë‹¨ì–´ë“  ìƒê´€ì—†ì´ ì²« ë¬¸ì ì¶œë ¥ ì €ì¥
+// ë‘ ë²ˆì§¸ ë‹¨ì–´ë¶€í„° ë¬´ì‹œí•  ë¬¸ìì¸ì§€ í™•ì¸ í›„ ë¬´ì‹œí•  ë¬¸ì§€ê°€ ì•„ë‹ˆë©´ ì²« ë¬¸ì ì¶œë ¥ ì €ì¥
+// ì¶œë ¥ ì €ì¥ëœ ë¬¸ìì—´ì„ ëª¨ë‘ ëŒ€ë¬¸ìë¡œ ë°”ê¾¼ í›„ ì¶œë ¥
+public class B3181_ì¤„ì„ë§_ë§Œë“¤ê¸° {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
-		StringTokenizer st = new StringTokenizer(br.readLine()); // Ã¹ ¹øÂ° ´Ü¾î
-		sb.append(st.nextToken().charAt(0)); // Ã¹ ´Ü¾îÀÇ Ã¹ ¹øÂ° ¹®ÀÚ Ãß°¡
-		while (st.countTokens() > 0) { // ¸ğµç ´Ü¾î È®ÀÎ
+		StringTokenizer st = new StringTokenizer(br.readLine()); // ì²« ë²ˆì§¸ ë‹¨ì–´
+		sb.append(st.nextToken().charAt(0)); // ì²« ë‹¨ì–´ì˜ ì²« ë²ˆì§¸ ë¬¸ì ì¶”ê°€
+		while (st.countTokens() > 0) { // ëª¨ë“  ë‹¨ì–´ í™•ì¸
 			String s = st.nextToken();
-			boolean add = false; // Ãß°¡ÇÒ ´Ü¾îÀÎÁö È®ÀÎ(false: Ãß°¡ ¾ÈÇÔ)
+			boolean add = false; // ì¶”ê°€í•  ë‹¨ì–´ì¸ì§€ í™•ì¸(false: ì¶”ê°€ ì•ˆí•¨)
 			switch (s) {
-			// ¹«½ÃÇÒ ¹®ÀÚ¸é ±×´ë·Î break
+			// ë¬´ì‹œí•  ë¬¸ìë©´ ê·¸ëŒ€ë¡œ break
 			case "i":
 				break;
 			case "pa":
@@ -38,16 +38,16 @@ public class B3181_ÁÙÀÓ¸»_¸¸µé±â {
 				break;
 			case "ili":
 				break;
-			// ÀüºÎ Ãß°¡ÇÒ ¹®ÀÚ¸é flag Ã¼Å©
+			// ì „ë¶€ ì¶”ê°€í•  ë¬¸ìë©´ flag ì²´í¬
 			default:
 				add = true;
 				break;
 			}
-			if (add) { // Ãß°¡ÇÒ ´Ü¾î¸é
-				sb.append(s.charAt(0)); // ´Ü¾îÀÇ Ã¹¹øÂ° ¹®ÀÚ Ãß°¡
+			if (add) { // ì¶”ê°€í•  ë‹¨ì–´ë©´
+				sb.append(s.charAt(0)); // ë‹¨ì–´ì˜ ì²«ë²ˆì§¸ ë¬¸ì ì¶”ê°€
 			}
 		}
-		System.out.println(sb.toString().toUpperCase()); // Ãâ·Â¹®À» ¸ğµÎ ´ë¹®ÀÚ·Î ¹Ù²ã¼­ Ãâ·Â
+		System.out.println(sb.toString().toUpperCase()); // ì¶œë ¥ë¬¸ì„ ëª¨ë‘ ëŒ€ë¬¸ìë¡œ ë°”ê¿”ì„œ ì¶œë ¥
 		br.close();
 	}
 }
