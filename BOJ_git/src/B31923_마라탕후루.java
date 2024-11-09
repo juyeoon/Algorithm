@@ -3,43 +3,43 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-// ¹İº¹¹®À¸·Î 10000¹ø µ¹¸®°í ÇÑ ¹ø ÇÒ ¶§¸¶´Ù µş±â¿Í »şÀÎ¸Ó½ºÄ¹ °³¼ö¸¦ ´Ã·Á¼­ °°À¸¸é ¹İº¹¹® Å»Ãâ
-// 10000¹ø Çß´Âµ¥µµ °³¼ö°¡ °°Áö ¾ÊÀ¸¸é ºÒ°¡´É ÆÇ´Ü
-// ºÒ°¡´É ÇÏ¸é NO, °¡´ÉÇÏ¸é ²¿Ä¡¸¶´ÙÀÇ ²ÈÀº Çàµ¿ È½¼ö Ãâ·Â
-public class B31923_¸¶¶óÅÁÈÄ·ç {
+// ë°˜ë³µë¬¸ìœ¼ë¡œ 10000ë²ˆ ëŒë¦¬ê³  í•œ ë²ˆ í•  ë•Œë§ˆë‹¤ ë”¸ê¸°ì™€ ìƒ¤ì¸ë¨¸ìŠ¤ìº£ ê°œìˆ˜ë¥¼ ëŠ˜ë ¤ì„œ ê°™ìœ¼ë©´ ë°˜ë³µë¬¸ íƒˆì¶œ
+// 10000ë²ˆ í–ˆëŠ”ë°ë„ ê°œìˆ˜ê°€ ê°™ì§€ ì•Šìœ¼ë©´ ë¶ˆê°€ëŠ¥ íŒë‹¨
+// ë¶ˆê°€ëŠ¥ í•˜ë©´ NO, ê°€ëŠ¥í•˜ë©´ ê¼¬ì¹˜ë§ˆë‹¤ì˜ ê½‚ì€ í–‰ë™ íšŸìˆ˜ ì¶œë ¥
+public class B31923_ë§ˆë¼íƒ•í›„ë£¨ {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		int N = Integer.parseInt(st.nextToken()); // ÅÁÈÄ·ç ²¿Ä¡ °³¼ö
-		int P = Integer.parseInt(st.nextToken()); // ·Îº¿ÀÌ 1ºĞ¸¶´Ù ²È´Â µş±âÀÇ °³¼ö
-		int Q = Integer.parseInt(st.nextToken()); // »şÀÎ¸Ó½ºÄ¹ÀÇ °³¼ö
-		StringTokenizer stA = new StringTokenizer(br.readLine()); // ²ÈÇôÀÖ´Â µş±â °³¼ö
-		StringTokenizer stB = new StringTokenizer(br.readLine()); // ²ÈÇôÀÖ´Â »şÀÎ¸Ó½ºÄ¹ °³¼ö
-		boolean possible = true; // ²¿Ä¡¸¶´Ù µş±â¿Í »şÀÎ¸Ó½ºÄ¹ÀÇ °³¼ö¸¦ ¶È°°ÀÌ ¸¸µé ¼ö ÀÖ´ÂÁö ¿©ºÎ (true: ¸¸µé ¼ö ÀÖÀ½)
-		for (int i = 0; i < N; i++) { // ²¿Ä¡ °³¼ö¸¸Å­ ¹İº¹
-			int A = Integer.parseInt(stA.nextToken()); // ÇöÀç ²¿Ä¡¿¡ ²ÈÇôÀÖ´Â µş±â °³¼ö
-			int B = Integer.parseInt(stB.nextToken()); // ÇöÀç ²¿Ä¡¿¡ ²ÈÇôÀÖ´Â »şÀÎ¸Ó½ºÄ¹ °³¼ö
-			int cnt = 0; // ·Îº¿ÀÌ ²È´Â Çàµ¿À» ¸î ¹ø Çß´ÂÁö
-			while (cnt < 10001) { // 10000¹ø ÀÌ³»¸¸ °¡´É
-				if (A == B) { // µş±â¿Í »şÀÎ¸Ó½ºÄ¹ °³¼ö°¡ °°¾ÆÁö¸é
-					sb.append(cnt).append(" "); // ¸î ¹ø ²È¾Ò´ÂÁö Ãâ·Â
+		int N = Integer.parseInt(st.nextToken()); // íƒ•í›„ë£¨ ê¼¬ì¹˜ ê°œìˆ˜
+		int P = Integer.parseInt(st.nextToken()); // ë¡œë´‡ì´ 1ë¶„ë§ˆë‹¤ ê½‚ëŠ” ë”¸ê¸°ì˜ ê°œìˆ˜
+		int Q = Integer.parseInt(st.nextToken()); // ìƒ¤ì¸ë¨¸ìŠ¤ìº£ì˜ ê°œìˆ˜
+		StringTokenizer stA = new StringTokenizer(br.readLine()); // ê½‚í˜€ìˆëŠ” ë”¸ê¸° ê°œìˆ˜
+		StringTokenizer stB = new StringTokenizer(br.readLine()); // ê½‚í˜€ìˆëŠ” ìƒ¤ì¸ë¨¸ìŠ¤ìº£ ê°œìˆ˜
+		boolean possible = true; // ê¼¬ì¹˜ë§ˆë‹¤ ë”¸ê¸°ì™€ ìƒ¤ì¸ë¨¸ìŠ¤ìº£ì˜ ê°œìˆ˜ë¥¼ ë˜‘ê°™ì´ ë§Œë“¤ ìˆ˜ ìˆëŠ”ì§€ ì—¬ë¶€ (true: ë§Œë“¤ ìˆ˜ ìˆìŒ)
+		for (int i = 0; i < N; i++) { // ê¼¬ì¹˜ ê°œìˆ˜ë§Œí¼ ë°˜ë³µ
+			int A = Integer.parseInt(stA.nextToken()); // í˜„ì¬ ê¼¬ì¹˜ì— ê½‚í˜€ìˆëŠ” ë”¸ê¸° ê°œìˆ˜
+			int B = Integer.parseInt(stB.nextToken()); // í˜„ì¬ ê¼¬ì¹˜ì— ê½‚í˜€ìˆëŠ” ìƒ¤ì¸ë¨¸ìŠ¤ìº£ ê°œìˆ˜
+			int cnt = 0; // ë¡œë´‡ì´ ê½‚ëŠ” í–‰ë™ì„ ëª‡ ë²ˆ í–ˆëŠ”ì§€
+			while (cnt < 10001) { // 10000ë²ˆ ì´ë‚´ë§Œ ê°€ëŠ¥
+				if (A == B) { // ë”¸ê¸°ì™€ ìƒ¤ì¸ë¨¸ìŠ¤ìº£ ê°œìˆ˜ê°€ ê°™ì•„ì§€ë©´
+					sb.append(cnt).append(" "); // ëª‡ ë²ˆ ê½‚ì•˜ëŠ”ì§€ ì¶œë ¥
 					break;
 				}
-				// °³¼ö°¡ °°Áö ¾ÊÀ» ¶§
-				A += P; // µş±â ²È±â
-				B += Q; // »şÀÎ¸Ó½ºÄ¹ ²È±â
-				cnt++; // Ä«¿îÆ® Áõ°¡
+				// ê°œìˆ˜ê°€ ê°™ì§€ ì•Šì„ ë•Œ
+				A += P; // ë”¸ê¸° ê½‚ê¸°
+				B += Q; // ìƒ¤ì¸ë¨¸ìŠ¤ìº£ ê½‚ê¸°
+				cnt++; // ì¹´ìš´íŠ¸ ì¦ê°€
 			}
-			if (cnt == 10001) { // 10000¹ø Çß´Âµ¥µµ °³¼ö°¡ °°Áö ¾ÊÀ¸¸é
-				possible = false; // ºÒ°¡´É
-				break; // µÚ¿¡ ´õ ÇÒ ÇÊ¿ä ¾øÀ½
+			if (cnt == 10001) { // 10000ë²ˆ í–ˆëŠ”ë°ë„ ê°œìˆ˜ê°€ ê°™ì§€ ì•Šìœ¼ë©´
+				possible = false; // ë¶ˆê°€ëŠ¥
+				break; // ë’¤ì— ë” í•  í•„ìš” ì—†ìŒ
 			}
 		}
-		if (possible) { // °¡´ÉÇÏ¸é
+		if (possible) { // ê°€ëŠ¥í•˜ë©´
 			System.out.println("YES");
 			System.out.println(sb);
-		} else { // ºÒ°¡´ÉÇÏ¸é
+		} else { // ë¶ˆê°€ëŠ¥í•˜ë©´
 			System.out.println("NO");
 		}
 		br.close();
