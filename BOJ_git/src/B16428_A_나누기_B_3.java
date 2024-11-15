@@ -5,36 +5,36 @@ import java.math.BigInteger;
 import java.util.StringTokenizer;
 
 // https://www.acmicpc.net/problem/16428
-// ¼öÀÇ ¹üÀ§°¡ -10^10000 ¡Â A, B ¡Â 10^10000ÀÌ¹Ç·Î BigInteger »ç¿ë
-// ³ª¸ÓÁö => A - (B * ¸ò)
-// ¸ò
-// ¾ç¼ö/¾ç¼ö => A/B
-// ¾ç¼ö/À½¼ö => -(|A|/|B|) = -(A/(-B))
-// À½¼ö/¾ç¼ö => -(|A|/|B|+1) = -((-A)/(B)+1)
-// À½¼ö/À½¼ö => |A|/|B|+1 = (-A)/(-B)+1
-public class B16428_A_³ª´©±â_B_3 {
+// ìˆ˜ì˜ ë²”ìœ„ê°€ -10^10000 â‰¤ A, B â‰¤ 10^10000ì´ë¯€ë¡œ BigInteger ì‚¬ìš©
+// ë‚˜ë¨¸ì§€ => A - (B * ëª«)
+// ëª«
+// ì–‘ìˆ˜/ì–‘ìˆ˜ => A/B
+// ì–‘ìˆ˜/ìŒìˆ˜ => -(|A|/|B|) = -(A/(-B))
+// ìŒìˆ˜/ì–‘ìˆ˜ => -(|A|/|B|+1) = -((-A)/(B)+1)
+// ìŒìˆ˜/ìŒìˆ˜ => |A|/|B|+1 = (-A)/(-B)+1
+public class B16428_A_ë‚˜ëˆ„ê¸°_B_3 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		String astring = st.nextToken(); // A°ª (String)
-		String bstring = st.nextToken(); // B°ª (String)
-		boolean asign = astring.charAt(0) == '-' ? false : true; // AÀÇ ºÎÈ£ (true: ¾ç¼ö)
-		boolean bsign = bstring.charAt(0) == '-' ? false : true; // BÀÇ ºÎÈ£ (true: ¾ç¼ö)
-		BigInteger A = new BigInteger(astring); // A°ª (¼ıÀÚ)
-		BigInteger B = new BigInteger(bstring); // B°ª (¼ıÀÚ)
-		BigInteger d = null; // ¸ò
-		if (asign && bsign) { // ¾ç¼ö/¾ç¼ö
+		String astring = st.nextToken(); // Aê°’ (String)
+		String bstring = st.nextToken(); // Bê°’ (String)
+		boolean asign = astring.charAt(0) == '-' ? false : true; // Aì˜ ë¶€í˜¸ (true: ì–‘ìˆ˜)
+		boolean bsign = bstring.charAt(0) == '-' ? false : true; // Bì˜ ë¶€í˜¸ (true: ì–‘ìˆ˜)
+		BigInteger A = new BigInteger(astring); // Aê°’ (ìˆ«ì)
+		BigInteger B = new BigInteger(bstring); // Bê°’ (ìˆ«ì)
+		BigInteger d = null; // ëª«
+		if (asign && bsign) { // ì–‘ìˆ˜/ì–‘ìˆ˜
 			d = A.divide(B); // A/B
-		} else if (asign) { // ¾ç¼ö/À½¼ö
+		} else if (asign) { // ì–‘ìˆ˜/ìŒìˆ˜
 			d = A.divide(B.negate()).negate(); // -(A/(-B))
-		} else if (bsign) { // À½¼ö/¾ç¼ö
+		} else if (bsign) { // ìŒìˆ˜/ì–‘ìˆ˜
 			d = A.negate().divide(B).add(BigInteger.ONE).negate(); // -((-A)/(B)+1)
-		} else { // À½¼ö/À½¼ö
+		} else { // ìŒìˆ˜/ìŒìˆ˜
 			d = A.negate().divide(B.negate()).add(BigInteger.ONE); // (-A)/(-B)+1
 		}
-		sb.append(d).append("\n").append(A.subtract(B.multiply(d))); // ¸ò, ³ª¸ÓÁö Ãâ·Â ÀúÀå
-		System.out.println(sb); // Ãâ·Â
+		sb.append(d).append("\n").append(A.subtract(B.multiply(d))); // ëª«, ë‚˜ë¨¸ì§€ ì¶œë ¥ ì €ì¥
+		System.out.println(sb); // ì¶œë ¥
 		br.close();
 	}
 }
