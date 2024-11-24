@@ -5,33 +5,33 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 // https://www.acmicpc.net/problem/14915
-// 10Áø¼ö¸¦ nÁø¼ö·Î ¹Ù²Ù´Â ¹æ¹ı => 10Áø¼ö¸¦ nÀ¸·Î ³ª´« ³ª¸ÓÁö¸¦ ¿ª¼øÀ¸·Î Ãâ·Â
-public class B14915_Áø¼ö_º¯È¯±â {
+// 10ì§„ìˆ˜ë¥¼ nì§„ìˆ˜ë¡œ ë°”ê¾¸ëŠ” ë°©ë²• => 10ì§„ìˆ˜ë¥¼ nìœ¼ë¡œ ë‚˜ëˆˆ ë‚˜ë¨¸ì§€ë¥¼ ì—­ìˆœìœ¼ë¡œ ì¶œë ¥
+public class B14915_ì§„ìˆ˜_ë³€í™˜ê¸° {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		int m = Integer.parseInt(st.nextToken()); // ÁÖ¾îÁø 10Áø¼ö
-		int n = Integer.parseInt(st.nextToken()); // º¯È¯ÇÒ Áø¼ö
-		char c[] = new char[16]; // 16Áø¼ö ±âÁØÀ¸·Î »ç¿ëÇÒ ¹®ÀÚ
+		int m = Integer.parseInt(st.nextToken()); // ì£¼ì–´ì§„ 10ì§„ìˆ˜
+		int n = Integer.parseInt(st.nextToken()); // ë³€í™˜í•  ì§„ìˆ˜
+		char c[] = new char[16]; // 16ì§„ìˆ˜ ê¸°ì¤€ìœ¼ë¡œ ì‚¬ìš©í•  ë¬¸ì
 		for (int i = 0; i < 10; i++) { // 0~9
 			c[i] = (char) (i + '0');
 		}
 		for (int i = 0; i < 6; i++) { // 10~16
 			c[10 + i] = (char) ('A' + i);
 		}
-		ArrayList<Character> num = new ArrayList<>(); // ³ª¸ÓÁö¸¦ ÀúÀåÇÒ ArrayList (±æÀÌ°¡ ¾ó¸»Áö ¸ğ¸£±â ¶§¹®¿¡ List »ç¿ë)
-		if (m == 0) { // 0ÀÌ¸é µû·Î Ã³¸®
+		ArrayList<Character> num = new ArrayList<>(); // ë‚˜ë¨¸ì§€ë¥¼ ì €ì¥í•  ArrayList (ê¸¸ì´ê°€ ì–¼ë§ì§€ ëª¨ë¥´ê¸° ë•Œë¬¸ì— List ì‚¬ìš©)
+		if (m == 0) { // 0ì´ë©´ ë”°ë¡œ ì²˜ë¦¬
 			sb.append(0);
 		}
-		while (m > 0) { // ³ª¸ÓÁö ±¸ÇÏ±â
+		while (m > 0) { // ë‚˜ë¨¸ì§€ êµ¬í•˜ê¸°
 			num.add(c[m % n]);
 			m /= n;
 		}
-		for (int i = num.size() - 1; i >= 0; i--) { // ¿ª¼ø Ãâ·Â
+		for (int i = num.size() - 1; i >= 0; i--) { // ì—­ìˆœ ì¶œë ¥
 			sb.append(num.get(i));
 		}
-		System.out.println(sb); // Ãâ·Â
+		System.out.println(sb); // ì¶œë ¥
 		br.close();
 	}
 }
