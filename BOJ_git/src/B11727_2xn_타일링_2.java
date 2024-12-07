@@ -3,19 +3,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 // https://www.acmicpc.net/problem/11727
-// n¹øÂ° °³¼ö´Â n-1¹øÂ°ÀÇ °³¼ö¶û (n-2¹øÂ°ÀÇ °³¼ö)*2ÀÇ ÇÕ (Á÷Á¢ ±×·Áº¸¸é ¾Ë ¼ö ÀÖÀ½)
-// dp·Î n¹øÂ°±îÁöÀÇ °³¼ö¸¦ °è¼ÓÇØ¼­ Ã£±â
-public class B11727_2xn_Å¸ÀÏ¸µ_2 {
+// në²ˆì§¸ ê°œìˆ˜ëŠ” n-1ë²ˆì§¸ì˜ ê°œìˆ˜ë‘ (n-2ë²ˆì§¸ì˜ ê°œìˆ˜)*2ì˜ í•© (ì§ì ‘ ê·¸ë ¤ë³´ë©´ ì•Œ ìˆ˜ ìˆìŒ)
+// dpë¡œ në²ˆì§¸ê¹Œì§€ì˜ ê°œìˆ˜ë¥¼ ê³„ì†í•´ì„œ ì°¾ê¸°
+public class B11727_2xn_íƒ€ì¼ë§_2 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
-		int dp[] = new int[n + 2]; // ÀÔ·ÂÀÌ 1Ä­ ÀÏ¶§ dp[2]¿¡¼­ ¾È °É¸®±â À§ÇØ +1ÀÌ ¾Æ´Ï°í +2
-		dp[1] = 1; // 2x1Ä­
-		dp[2] = 3; // 2x2Ä­
-		for (int i = 3; i <= n; i++) { // dp ±¸ÇÏ±â
-			dp[i] = (dp[i - 1] + 2 * dp[i - 2]) % 10007; // ³ª¸ÓÁö¸¦ ´õÇÑ °ªÀÇ ³ª¸ÓÁö´Â °°À½
+		int dp[] = new int[n + 2]; // ì…ë ¥ì´ 1ì¹¸ ì¼ë•Œ dp[2]ì—ì„œ ì•ˆ ê±¸ë¦¬ê¸° ìœ„í•´ +1ì´ ì•„ë‹ˆê³  +2
+		dp[1] = 1; // 2x1ì¹¸
+		dp[2] = 3; // 2x2ì¹¸
+		for (int i = 3; i <= n; i++) { // dp êµ¬í•˜ê¸°
+			dp[i] = (dp[i - 1] + 2 * dp[i - 2]) % 10007; // ë‚˜ë¨¸ì§€ë¥¼ ë”í•œ ê°’ì˜ ë‚˜ë¨¸ì§€ëŠ” ê°™ìŒ
 		}
-		System.out.println(dp[n]); // Ãâ·Â
+		System.out.println(dp[n]); // ì¶œë ¥
 		br.close();
 	}
 }
