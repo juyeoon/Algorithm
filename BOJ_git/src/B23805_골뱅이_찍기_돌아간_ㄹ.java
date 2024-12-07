@@ -3,20 +3,20 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 // https://www.acmicpc.net/problem/23805
-// ÆĞÅÏÀ» ºĞ¼®ÇÑ ÈÄ ¹İº¹¹®À» »ç¿ëÇØ¼­ Ãâ·Â
-// Ã¹¹øÂ° ÁÙ : ('@'N*3°³ ' 'N°³ '@'N°³ )N°³
-// °¡¿îµ¥ ÁÙ : ('@'N°³ ' 'N°³ '@'N°³ ' 'N°³ '@'N°³ )N*3°³
-// ¸¶Áö¸· ÁÙ : ('@'N°³ ' 'N°³ '@'N*3°³ )N°³
-public class B23805_°ñ¹ğÀÌ_Âï±â_µ¹¾Æ°£_¤© {
+// íŒ¨í„´ì„ ë¶„ì„í•œ í›„ ë°˜ë³µë¬¸ì„ ì‚¬ìš©í•´ì„œ ì¶œë ¥
+// ì²«ë²ˆì§¸ ì¤„ : ('@'N*3ê°œ ' 'Nê°œ '@'Nê°œ )Nê°œ
+// ê°€ìš´ë° ì¤„ : ('@'Nê°œ ' 'Nê°œ '@'Nê°œ ' 'Nê°œ '@'Nê°œ )N*3ê°œ
+// ë§ˆì§€ë§‰ ì¤„ : ('@'Nê°œ ' 'Nê°œ '@'N*3ê°œ )Nê°œ
+public class B23805_ê³¨ë±…ì´_ì°ê¸°_ëŒì•„ê°„_ã„¹ {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
-		int N = Integer.parseInt(br.readLine()); // ¼¿ÀÇ Å©±â
-		StringBuilder sbtmp = new StringBuilder(); // ÀÓ½Ã StringBuilder
-		String first = ""; // Ã¹¹øÂ° ÁÙ ¸ğ¾ç
-		String mid = ""; // Áß°£ ÁÙ ¸ğ¾ç
-		String last = ""; // ¸¶Áö¸· ÁÙ ¸ğ¾ç
-		// Ã¹¹øÂ° ÁÙ ¸¸µé±â
+		int N = Integer.parseInt(br.readLine()); // ì…€ì˜ í¬ê¸°
+		StringBuilder sbtmp = new StringBuilder(); // ì„ì‹œ StringBuilder
+		String first = ""; // ì²«ë²ˆì§¸ ì¤„ ëª¨ì–‘
+		String mid = ""; // ì¤‘ê°„ ì¤„ ëª¨ì–‘
+		String last = ""; // ë§ˆì§€ë§‰ ì¤„ ëª¨ì–‘
+		// ì²«ë²ˆì§¸ ì¤„ ë§Œë“¤ê¸°
 		for (int j = 0; j < N * 3; j++) {
 			sbtmp.append("@");
 		}
@@ -27,7 +27,7 @@ public class B23805_°ñ¹ğÀÌ_Âï±â_µ¹¾Æ°£_¤© {
 			sbtmp.append("@");
 		}
 		first = sbtmp.toString();
-		// Áß°£ ÁÙ ¸¸µé±â
+		// ì¤‘ê°„ ì¤„ ë§Œë“¤ê¸°
 		sbtmp.setLength(0);
 		for (int j = 0; j < N; j++) {
 			sbtmp.append("@");
@@ -45,7 +45,7 @@ public class B23805_°ñ¹ğÀÌ_Âï±â_µ¹¾Æ°£_¤© {
 			sbtmp.append("@");
 		}
 		mid = sbtmp.toString();
-		// ¸¶Áö¸· ÁÙ ¸¸µé±â
+		// ë§ˆì§€ë§‰ ì¤„ ë§Œë“¤ê¸°
 		sbtmp.setLength(0);
 		for (int j = 0; j < N; j++) {
 			sbtmp.append("@");
@@ -57,7 +57,7 @@ public class B23805_°ñ¹ğÀÌ_Âï±â_µ¹¾Æ°£_¤© {
 			sbtmp.append("@");
 		}
 		last = sbtmp.toString();
-		// ÃÖÁ¾ ¸ğ¾ç ¸¸µé±â
+		// ìµœì¢… ëª¨ì–‘ ë§Œë“¤ê¸°
 		for (int i = 0; i < N; i++) {
 			sb.append(first).append("\n");
 		}
@@ -67,7 +67,7 @@ public class B23805_°ñ¹ğÀÌ_Âï±â_µ¹¾Æ°£_¤© {
 		for (int i = 0; i < N; i++) {
 			sb.append(last).append("\n");
 		}
-		System.out.println(sb); // Ãâ·Â
+		System.out.println(sb); // ì¶œë ¥
 		br.close();
 	}
 }
