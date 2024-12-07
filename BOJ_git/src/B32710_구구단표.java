@@ -3,23 +3,23 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 // https://www.acmicpc.net/problem/3181
-// 2ºÎÅÍ 9±îÁö ÇØ´ç ¼ıÀÚ¸¦ ³ª´©¾úÀ» ¶§ ³ª¸ÓÁö°¡ 0ÀÌ°í ¸òÀÌ 2~9 »çÀÌ¸é Á¸ÀçÇÏ´Â °Í
-// ¶ÇÇÑ ±¸±¸´Ü ½Ä(axb)¿¡¼­ 1~9±îÁö µîÀåÇÏ±â ¶§¹®¿¡ ÇØ´ç ¹üÀ§ ¾ÈÀÌ¸é Á¸Àç
-public class B32710_±¸±¸´ÜÇ¥ {
+// 2ë¶€í„° 9ê¹Œì§€ í•´ë‹¹ ìˆ«ìë¥¼ ë‚˜ëˆ„ì—ˆì„ ë•Œ ë‚˜ë¨¸ì§€ê°€ 0ì´ê³  ëª«ì´ 2~9 ì‚¬ì´ë©´ ì¡´ì¬í•˜ëŠ” ê²ƒ
+// ë˜í•œ êµ¬êµ¬ë‹¨ ì‹(axb)ì—ì„œ 1~9ê¹Œì§€ ë“±ì¥í•˜ê¸° ë•Œë¬¸ì— í•´ë‹¹ ë²”ìœ„ ì•ˆì´ë©´ ì¡´ì¬
+public class B32710_êµ¬êµ¬ë‹¨í‘œ {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int N = Integer.parseInt(br.readLine()); // ÀÔ·Â ¹ŞÀº ¼ö
-		boolean ap = false; // Á¸Àç ¿©ºÎ (true: Á¸Àç)
-		if (N < 10) { // ±¸±¸´Ü ½Ä¿¡ ÀÖÀ¸¸é
+		int N = Integer.parseInt(br.readLine()); // ì…ë ¥ ë°›ì€ ìˆ˜
+		boolean ap = false; // ì¡´ì¬ ì—¬ë¶€ (true: ì¡´ì¬)
+		if (N < 10) { // êµ¬êµ¬ë‹¨ ì‹ì— ìˆìœ¼ë©´
 			ap = true;
 		}
-		for (int i = 2; i <= 9; i++) { // 2~9´Ü È®ÀÎ
-			if (N % i == 0 && N / i <= 9) { // ³ª¸ÓÁö°¡ 0ÀÌ°í ¸òÀÌ 2~9ÀÏ ¶§
-				ap = true; // Á¸Àç
-				break; // ´õ È®ÀÎ ÇÊ¿ä x
+		for (int i = 2; i <= 9; i++) { // 2~9ë‹¨ í™•ì¸
+			if (N % i == 0 && N / i <= 9) { // ë‚˜ë¨¸ì§€ê°€ 0ì´ê³  ëª«ì´ 2~9ì¼ ë•Œ
+				ap = true; // ì¡´ì¬
+				break; // ë” í™•ì¸ í•„ìš” x
 			}
 		}
-		System.out.println(ap ? 1 : 0); // Ãâ·Â
+		System.out.println(ap ? 1 : 0); // ì¶œë ¥
 		br.close();
 	}
 }
