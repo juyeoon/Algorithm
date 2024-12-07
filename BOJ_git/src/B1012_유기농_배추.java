@@ -4,55 +4,55 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 // https://www.acmicpc.net/problem/1012
-// Ç®ÀÌ: dfs·Î 4¹æ(»ó¿ìÇÏÁÂ)À¸·Î ¿¬°áµÈ µ¢¾î¸®(±×·¡ÇÁ)°¡ ¸î °³ÀÎÁö È®ÀÎ
-// ÀÎÁ¢¸®½ºÆ®¿Í ÀÎÁ¢ Çà·ÄÀ» »ç¿ëÇÏÁö ¾Ê°í ±×³É ÁÖ¾îÁø ¹è¿­¿¡¼­ »ç¹æÀ¸·Î ±íÀÌ ¿ì¼± Å½»ö
-// main¿¡¼­ dfs() ¹ØÀ¸·Î ¶³¾îÁö¸é Ä«¿îÆ®ÇÏ¿© µ¢¾î¸® °³¼ö¸¦ Ä«¿îÆ®
-public class B1012_À¯±â³ó_¹èÃß {
-	public static boolean[][] arr; // ¹èÃß ¹è¿­
-	public static boolean[][] isvisited; // ¹æ¹® ¹è¿­
-	public static int N, M; // ¹è¿­ Å©±â
-	public static int[] dx = { 0, 1, 0, -1 }; // »ç¹æ Å½»ö i
-	public static int[] dy = { -1, 0, 1, 0 }; // »ç¹æ Å½»ö j
+// í’€ì´: dfsë¡œ 4ë°©(ìƒìš°í•˜ì¢Œ)ìœ¼ë¡œ ì—°ê²°ëœ ë©ì–´ë¦¬(ê·¸ë˜í”„)ê°€ ëª‡ ê°œì¸ì§€ í™•ì¸
+// ì¸ì ‘ë¦¬ìŠ¤íŠ¸ì™€ ì¸ì ‘ í–‰ë ¬ì„ ì‚¬ìš©í•˜ì§€ ì•Šê³  ê·¸ëƒ¥ ì£¼ì–´ì§„ ë°°ì—´ì—ì„œ ì‚¬ë°©ìœ¼ë¡œ ê¹Šì´ ìš°ì„  íƒìƒ‰
+// mainì—ì„œ dfs() ë°‘ìœ¼ë¡œ ë–¨ì–´ì§€ë©´ ì¹´ìš´íŠ¸í•˜ì—¬ ë©ì–´ë¦¬ ê°œìˆ˜ë¥¼ ì¹´ìš´íŠ¸
+public class B1012_ìœ ê¸°ë†_ë°°ì¶” {
+	public static boolean[][] arr; // ë°°ì¶” ë°°ì—´
+	public static boolean[][] isvisited; // ë°©ë¬¸ ë°°ì—´
+	public static int N, M; // ë°°ì—´ í¬ê¸°
+	public static int[] dx = { 0, 1, 0, -1 }; // ì‚¬ë°© íƒìƒ‰ i
+	public static int[] dy = { -1, 0, 1, 0 }; // ì‚¬ë°© íƒìƒ‰ j
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
-		int T = Integer.parseInt(br.readLine()); // Å×½ºÆ®ÄÉÀÌ½º
-		for (int tc = 0; tc < T; tc++) { // Å×½ºÆ®ÄÉÀÌ½º
+		int T = Integer.parseInt(br.readLine()); // í…ŒìŠ¤íŠ¸ì¼€ì´ìŠ¤
+		for (int tc = 0; tc < T; tc++) { // í…ŒìŠ¤íŠ¸ì¼€ì´ìŠ¤
 			StringTokenizer st = new StringTokenizer(br.readLine());
-			M = Integer.parseInt(st.nextToken()); // °¡·Î Å©±â
-			N = Integer.parseInt(st.nextToken()); // ¼¼·Î Å©±â
-			int K = Integer.parseInt(st.nextToken()); // ¹èÃß °³¼ö
-			arr = new boolean[N][M]; // ¹èÃß ¹è¿­ ÃÊ±âÈ­
-			isvisited = new boolean[N][M]; // ¹æ¹® ¹è¿­ ÃÊ±âÈ­
-			for (int i = 0; i < K; i++) { // ¹èÃß À§Ä¡
+			M = Integer.parseInt(st.nextToken()); // ê°€ë¡œ í¬ê¸°
+			N = Integer.parseInt(st.nextToken()); // ì„¸ë¡œ í¬ê¸°
+			int K = Integer.parseInt(st.nextToken()); // ë°°ì¶” ê°œìˆ˜
+			arr = new boolean[N][M]; // ë°°ì¶” ë°°ì—´ ì´ˆê¸°í™”
+			isvisited = new boolean[N][M]; // ë°©ë¬¸ ë°°ì—´ ì´ˆê¸°í™”
+			for (int i = 0; i < K; i++) { // ë°°ì¶” ìœ„ì¹˜
 				st = new StringTokenizer(br.readLine());
 				int y = Integer.parseInt(st.nextToken());
 				int x = Integer.parseInt(st.nextToken());
-				arr[x][y] = true; // ¹èÃß Ç¥±â
+				arr[x][y] = true; // ë°°ì¶” í‘œê¸°
 			}
-			int cnt = 0; // ¹ú·¹(µ¢¾î¸®, ±×·¡ÇÁ) °³¼ö
-			for (int i = 0; i < N; i++) { // dfs ½ÃÀÛÁ¡ Ã£´Â ¹İº¹¹®
+			int cnt = 0; // ë²Œë ˆ(ë©ì–´ë¦¬, ê·¸ë˜í”„) ê°œìˆ˜
+			for (int i = 0; i < N; i++) { // dfs ì‹œì‘ì  ì°¾ëŠ” ë°˜ë³µë¬¸
 				for (int j = 0; j < M; j++) {
-					if (arr[i][j] && !isvisited[i][j]) { // ¹èÃß°¡ ÀÖ°í ¹æ¹® ¾È ÇßÀ¸¸é
-						dfs(i, j); // dfs ½ÃÀÛ
-						cnt++; // ±×·¡ÇÁ Å½»ö ³¡, Ä«¿îÆ®
+					if (arr[i][j] && !isvisited[i][j]) { // ë°°ì¶”ê°€ ìˆê³  ë°©ë¬¸ ì•ˆ í–ˆìœ¼ë©´
+						dfs(i, j); // dfs ì‹œì‘
+						cnt++; // ê·¸ë˜í”„ íƒìƒ‰ ë, ì¹´ìš´íŠ¸
 					}
 				}
 			}
-			sb.append(cnt).append("\n"); // Ä«¿îÆ® Ãâ·Â ÀúÀå
+			sb.append(cnt).append("\n"); // ì¹´ìš´íŠ¸ ì¶œë ¥ ì €ì¥
 		}
-		System.out.println(sb); // Ãâ·Â
+		System.out.println(sb); // ì¶œë ¥
 		br.close();
 	}
 
 	public static void dfs(int i, int j) { // dfs
-		isvisited[i][j] = true; // ¹æ¹® Ç¥±â
-		for (int l = 0; l < 4; l++) { // »ç¹æ Å½»ö
-			int nexti = i + dx[l]; // ´ÙÀ½ i
-			int nextj = j + dy[l]; // ´ÙÀ½ j
-			// ¹è¿­ ¹üÀ§¸¦ ¹ş¾î³ªÁö ¾Ê°í
-			// ¹èÃß°¡ ÀÖ°í ¹æ¹® ¾È ÇßÀ¸¸é dfs
+		isvisited[i][j] = true; // ë°©ë¬¸ í‘œê¸°
+		for (int l = 0; l < 4; l++) { // ì‚¬ë°© íƒìƒ‰
+			int nexti = i + dx[l]; // ë‹¤ìŒ i
+			int nextj = j + dy[l]; // ë‹¤ìŒ j
+			// ë°°ì—´ ë²”ìœ„ë¥¼ ë²—ì–´ë‚˜ì§€ ì•Šê³ 
+			// ë°°ì¶”ê°€ ìˆê³  ë°©ë¬¸ ì•ˆ í–ˆìœ¼ë©´ dfs
 			if (0 <= nexti && nexti < N && 0 <= nextj && nextj < M && arr[nexti][nextj] && !isvisited[nexti][nextj]) {
 				dfs(nexti, nextj);
 			}
