@@ -3,18 +3,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 // https://www.acmicpc.net/problem/24510
-// °¢ ÄÚµå¸¦ char ¹è¿­¿¡ ÀúÀåÇÑ ÈÄ ÇÑ ¹®ÀÚ¾¿ È®ÀÎ
-// "for", "while" µîÀå È½¼ö¸¦ ¼¼±â(¹è¿­ ÀÎµ¦½º ÁÖÀÇ)
-// ÃÖ´ë µîÀå È½¼ö °»½ÅÇÏ¿© ÄÚµå ´Ù È®ÀÎÇÏ°í ÃÖ´ñ°ª Ãâ·Â
-public class B24510_½Ã°£º¹Àâµµ¸¦_¹è¿î_µµµµ {
+// ê° ì½”ë“œë¥¼ char ë°°ì—´ì— ì €ì¥í•œ í›„ í•œ ë¬¸ìì”© í™•ì¸
+// "for", "while" ë“±ì¥ íšŸìˆ˜ë¥¼ ì„¸ê¸°(ë°°ì—´ ì¸ë±ìŠ¤ ì£¼ì˜)
+// ìµœëŒ€ ë“±ì¥ íšŸìˆ˜ ê°±ì‹ í•˜ì—¬ ì½”ë“œ ë‹¤ í™•ì¸í•˜ê³  ìµœëŒ“ê°’ ì¶œë ¥
+public class B24510_ì‹œê°„ë³µì¡ë„ë¥¼_ë°°ìš´_ë„ë„ {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(br.readLine()); // ÄÚµå ÁÙÀÇ °³¼ö
-		int max = 0; // ÃÖ´ë µîÀå È½¼ö
-		for (int i = 0; i < n; i++) { // ÄÚµå
-			char c[] = br.readLine().toCharArray(); // ÄÚµå
-			int cnt = 0; // µîÀå È½¼ö
-			int leng = c.length; // ¹İº¹¹® Á¾·á Á¶°Ç
+		int n = Integer.parseInt(br.readLine()); // ì½”ë“œ ì¤„ì˜ ê°œìˆ˜
+		int max = 0; // ìµœëŒ€ ë“±ì¥ íšŸìˆ˜
+		for (int i = 0; i < n; i++) { // ì½”ë“œ
+			char c[] = br.readLine().toCharArray(); // ì½”ë“œ
+			int cnt = 0; // ë“±ì¥ íšŸìˆ˜
+			int leng = c.length; // ë°˜ë³µë¬¸ ì¢…ë£Œ ì¡°ê±´
 			for (int j = 0; j < leng; j++) {
 				if (j < leng - 2 && c[j] == 'f' && c[j + 1] == 'o' && c[j + 2] == 'r') { // "for"
 					cnt++;
@@ -25,9 +25,9 @@ public class B24510_½Ã°£º¹Àâµµ¸¦_¹è¿î_µµµµ {
 					j += 4;
 				}
 			}
-			max = Math.max(cnt, max); // max °»½Å
+			max = Math.max(cnt, max); // max ê°±ì‹ 
 		}
-		System.out.println(max); // Ãâ·Â
+		System.out.println(max); // ì¶œë ¥
 		br.close();
 	}
 }
