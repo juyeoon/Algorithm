@@ -4,17 +4,17 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 // https://www.acmicpc.net/problem/28061
-// °¢°¢ÀÇ ·¹¸ó ³ª¹«¿¡¼­ ·¹¸óÀ» µı ÈÄ¿¡ ³²Àº °Å¸®¸¸Å­À» »« °Íµé Áß¿¡ ÃÖ´ñ°ªÀ» Ã£±â
-public class B28061_·¹¸ó_µû±â {
+// ê°ê°ì˜ ë ˆëª¬ ë‚˜ë¬´ì—ì„œ ë ˆëª¬ì„ ë”´ í›„ì— ë‚¨ì€ ê±°ë¦¬ë§Œí¼ì„ ëº€ ê²ƒë“¤ ì¤‘ì— ìµœëŒ“ê°’ì„ ì°¾ê¸°
+public class B28061_ë ˆëª¬_ë”°ê¸° {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int N = Integer.parseInt(br.readLine()); // ·¹¸ó ³ª¹« °³¼ö
+		int N = Integer.parseInt(br.readLine()); // ë ˆëª¬ ë‚˜ë¬´ ê°œìˆ˜
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		int max = 0; // ÃÖ´ë·Î °¡Á®°¥ ¼ö ÀÖ´Â ·¹¸ó °³¼ö
-		for (int i = N; i > 0; i--) { // ÇöÀç À§Ä¡¿¡¼­ Áı±îÁöÀÇ °Å¸®
-			max = Math.max(max, Integer.parseInt(st.nextToken()) - i); // ÃÖ´ë ·¹¸ó °³¼ö °»½Å
+		int max = 0; // ìµœëŒ€ë¡œ ê°€ì ¸ê°ˆ ìˆ˜ ìˆëŠ” ë ˆëª¬ ê°œìˆ˜
+		for (int i = N; i > 0; i--) { // í˜„ì¬ ìœ„ì¹˜ì—ì„œ ì§‘ê¹Œì§€ì˜ ê±°ë¦¬
+			max = Math.max(max, Integer.parseInt(st.nextToken()) - i); // ìµœëŒ€ ë ˆëª¬ ê°œìˆ˜ ê°±ì‹ 
 		}
-		System.out.println(max); // Ãâ·Â
+		System.out.println(max); // ì¶œë ¥
 		br.close();
 	}
 }
