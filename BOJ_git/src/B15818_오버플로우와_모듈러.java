@@ -4,22 +4,22 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 // https://www.acmicpc.net/problem/15818
-// (A ¡¿ B) % M = ((A % M) ¡¿ (B % M)) % M
-// ³ª¸ÓÁöÀÇ °öÀ» ±¸ÇÑ ÈÄ ÇÑ ¹ø ´õ ³ª¸ÓÁö ¿¬»êÀ» ¿¬»êÇÒ ¼ö¸¸Å­ ¹İº¹
-public class B15818_¿À¹öÇÃ·Î¿ì¿Í_¸ğµâ·¯ {
+// (A Ã— B) % M = ((A % M) Ã— (B % M)) % M
+// ë‚˜ë¨¸ì§€ì˜ ê³±ì„ êµ¬í•œ í›„ í•œ ë²ˆ ë” ë‚˜ë¨¸ì§€ ì—°ì‚°ì„ ì—°ì‚°í•  ìˆ˜ë§Œí¼ ë°˜ë³µ
+public class B15818_ì˜¤ë²„í”Œë¡œìš°ì™€_ëª¨ë“ˆëŸ¬ {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		int N = Integer.parseInt(st.nextToken()); // Á¤¼öÀÇ °³¼ö
-		int M = Integer.parseInt(st.nextToken()); // ³ª¸ÓÁö ¿¬»êÇÒ ¼ö
-		long sum = 1; // °öÀÇ ÇÕÀÇ ³ª¸ÓÁö = ³ª¸ÓÁö °öÀÇ ÇÕÀÇ ³ª¸ÓÁö
+		int N = Integer.parseInt(st.nextToken()); // ì •ìˆ˜ì˜ ê°œìˆ˜
+		int M = Integer.parseInt(st.nextToken()); // ë‚˜ë¨¸ì§€ ì—°ì‚°í•  ìˆ˜
+		long sum = 1; // ê³±ì˜ í•©ì˜ ë‚˜ë¨¸ì§€ = ë‚˜ë¨¸ì§€ ê³±ì˜ í•©ì˜ ë‚˜ë¨¸ì§€
 		st = new StringTokenizer(br.readLine());
-		for (int i = 0; i < N; i++) { // Á¤¼öÀÇ °³¼ö
-			int a = Integer.parseInt(st.nextToken()) % M; // Á¤¼öÀÇ ³ª¸ÓÁö
-			sum *= a; // ´ä¿¡ °öÇÏ±â
-			sum %= M; // ¶Ç ³ª¸ÓÁö ±¸ÇÏ±â
+		for (int i = 0; i < N; i++) { // ì •ìˆ˜ì˜ ê°œìˆ˜
+			int a = Integer.parseInt(st.nextToken()) % M; // ì •ìˆ˜ì˜ ë‚˜ë¨¸ì§€
+			sum *= a; // ë‹µì— ê³±í•˜ê¸°
+			sum %= M; // ë˜ ë‚˜ë¨¸ì§€ êµ¬í•˜ê¸°
 		}
-		System.out.println(sum); // Ãâ·Â
+		System.out.println(sum); // ì¶œë ¥
 		br.close();
 	}
 }
