@@ -4,19 +4,19 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 // https://www.acmicpc.net/problem/11312
-// Å« »ï°¢Çü ÇÑ º¯À» µ¤À» ¼ö ÀÖ´Â ÀÛÀº »ï°¢ÇüÀÇ ÇÑ º¯ÀÇ ¼öÀÇ Á¦°ö °³
+// í° ì‚¼ê°í˜• í•œ ë³€ì„ ë®ì„ ìˆ˜ ìˆëŠ” ì‘ì€ ì‚¼ê°í˜•ì˜ í•œ ë³€ì˜ ìˆ˜ì˜ ì œê³± ê°œ
 // = (A / B)^2
-public class B11312_»ï°¢_¹«´Ì_2 {
+public class B11312_ì‚¼ê°_ë¬´ëŠ¬_2 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
-		int T = Integer.parseInt(br.readLine()); // Å×½ºÆ®ÄÉÀÌ½º
+		int T = Integer.parseInt(br.readLine()); // í…ŒìŠ¤íŠ¸ì¼€ì´ìŠ¤
 		for (int tc = 0; tc < T; tc++) {
 			StringTokenizer st = new StringTokenizer(br.readLine());
-			long side = Integer.parseInt(st.nextToken()) / Integer.parseInt(st.nextToken()); // ÇÑ º¯À» µ¤±â À§ÇÑ ÀÛÀº »ï°¢ÇüÀÇ º¯ÀÇ °³¼ö
-			sb.append(side * side).append("\n"); // »ï°¢ÇüÀ» µ¤±â À§ÇÑ ÀÛÀº »ï°¢ÇüÀÇ °³¼ö
+			long side = Integer.parseInt(st.nextToken()) / Integer.parseInt(st.nextToken()); // í•œ ë³€ì„ ë®ê¸° ìœ„í•œ ì‘ì€ ì‚¼ê°í˜•ì˜ ë³€ì˜ ê°œìˆ˜
+			sb.append(side * side).append("\n"); // ì‚¼ê°í˜•ì„ ë®ê¸° ìœ„í•œ ì‘ì€ ì‚¼ê°í˜•ì˜ ê°œìˆ˜
 		}
-		System.out.println(sb); // Ãâ·Â
+		System.out.println(sb); // ì¶œë ¥
 		br.close();
 	}
 }
