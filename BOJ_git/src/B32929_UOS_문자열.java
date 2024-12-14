@@ -3,13 +3,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 // https://www.acmicpc.net/problem/32929
-// UOSÀÇ ±æÀÌÀÎ 3À¸·Î ³ª´« ³ª¸ÓÁö°¡ 0ÀÌ¸é S, 1ÀÌ¸é U, 2ÀÌ¸é O Ãâ·Â
-public class B32929_UOS_¹®ÀÚ¿­ {
+// UOSì˜ ê¸¸ì´ì¸ 3ìœ¼ë¡œ ë‚˜ëˆˆ ë‚˜ë¨¸ì§€ê°€ 0ì´ë©´ S, 1ì´ë©´ U, 2ì´ë©´ O ì¶œë ¥
+public class B32929_UOS_ë¬¸ìì—´ {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int N = Integer.parseInt(br.readLine()); // ÀÔ·Â ¼ö
-		String s[] = { "S", "U", "O" }; // ³ª¸ÓÁö °ª¿¡ ÇØ´çÇÏ´Â ¹®ÀÚ
-		System.out.println(s[N % 3]); // 3À¸·Î ³ª´« ³ª¸ÓÁö °ª¿¡ ÇØ´çÇÏ´Â ¹®ÀÚ Ãâ·Â
+		int N = Integer.parseInt(br.readLine()); // ì…ë ¥ ìˆ˜
+		String s[] = { "S", "U", "O" }; // ë‚˜ë¨¸ì§€ ê°’ì— í•´ë‹¹í•˜ëŠ” ë¬¸ì
+		System.out.println(s[N % 3]); // 3ìœ¼ë¡œ ë‚˜ëˆˆ ë‚˜ë¨¸ì§€ ê°’ì— í•´ë‹¹í•˜ëŠ” ë¬¸ì ì¶œë ¥
 		br.close();
 	}
 }
