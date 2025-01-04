@@ -3,26 +3,26 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 // https://www.acmicpc.net/problem/21734
-// Çüº¯È¯À¸·Î ¹®ÀÚ¸¦ Á¤¼öÇüÀ¸·Î ¹Ù²Û ÈÄ %10, /10À» ÀÌ¿ëÇÏ¿© °¢ ÀÚ¸® ¼öÀÇ ÇÕÀ» ±¸ÇÏ°í
-// ¹İº¹¹®À¸·Î ÇÕ¸¸Å­ ¹®ÀÚ Ãâ·Â
-public class B21734_SMUPCÀÇ_µîÀå {
+// í˜•ë³€í™˜ìœ¼ë¡œ ë¬¸ìë¥¼ ì •ìˆ˜í˜•ìœ¼ë¡œ ë°”ê¾¼ í›„ %10, /10ì„ ì´ìš©í•˜ì—¬ ê° ìë¦¬ ìˆ˜ì˜ í•©ì„ êµ¬í•˜ê³ 
+// ë°˜ë³µë¬¸ìœ¼ë¡œ í•©ë§Œí¼ ë¬¸ì ì¶œë ¥
+public class B21734_SMUPCì˜_ë“±ì¥ {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
-		char c[] = br.readLine().toCharArray(); // ÁÖ¾îÁö´Â ´Ü¾î
+		char c[] = br.readLine().toCharArray(); // ì£¼ì–´ì§€ëŠ” ë‹¨ì–´
 		for (int i = 0; i < c.length; i++) {
-			int n = (int) c[i]; // ascii ÄÚµå °ªÀ» 10Áø¹ıÀ¸·Î
-			int cnt = 0; // °¢ ÀÚ¸® ¼öÀÇ ÇÕ
-			while (n > 0) { // ÇÕ ±¸ÇÏ±â
+			int n = (int) c[i]; // ascii ì½”ë“œ ê°’ì„ 10ì§„ë²•ìœ¼ë¡œ
+			int cnt = 0; // ê° ìë¦¬ ìˆ˜ì˜ í•©
+			while (n > 0) { // í•© êµ¬í•˜ê¸°
 				cnt += n % 10;
 				n /= 10;
 			}
-			for (int j = 0; j < cnt; j++) { // °¢ ÀÚ¸® ¼öÀÇ ÇÕ¸¸Å­ ¹®ÀÚ Ãâ·Â
+			for (int j = 0; j < cnt; j++) { // ê° ìë¦¬ ìˆ˜ì˜ í•©ë§Œí¼ ë¬¸ì ì¶œë ¥
 				sb.append(c[i]);
 			}
 			sb.append("\n");
 		}
-		System.out.println(sb); // Ãâ·Â
+		System.out.println(sb); // ì¶œë ¥
 		br.close();
 	}
 }
