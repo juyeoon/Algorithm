@@ -4,21 +4,21 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 // https://www.acmicpc.net/problem/16675
-// ³× ¼ÕÀ» ¼ø¼­´ë·Î ±âÁØ ¼ÕÀ¸·Î Á¤ÇÏ°í ¹İ´ëÆíÀÇ »ç¶÷ÀÇ ¿Ş¼Õ, ¿À¸¥¼Õ 2¹øÀ» ºñ±³ÇØ¼­ µÑ ´Ù ÀÌ±æ ¼ö ÀÖÀ¸¸é ¹«Á¶°Ç ½Â¸®ÇÔ
-public class B16675_µÎ_°³ÀÇ_¼Õ {
+// ë„¤ ì†ì„ ìˆœì„œëŒ€ë¡œ ê¸°ì¤€ ì†ìœ¼ë¡œ ì •í•˜ê³  ë°˜ëŒ€í¸ì˜ ì‚¬ëŒì˜ ì™¼ì†, ì˜¤ë¥¸ì† 2ë²ˆì„ ë¹„êµí•´ì„œ ë‘˜ ë‹¤ ì´ê¸¸ ìˆ˜ ìˆìœ¼ë©´ ë¬´ì¡°ê±´ ìŠ¹ë¦¬í•¨
+public class B16675_ë‘_ê°œì˜_ì† {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		char mt[][] = { { st.nextToken().charAt(0), st.nextToken().charAt(0) },
-				{ st.nextToken().charAt(0), st.nextToken().charAt(0) } }; // °¡À§¹ÙÀ§º¸ »óÅÂ
-		int winner = 2; // ¹«Á¶°Ç ÀÌ±â´Â »ç¶÷ (0: ¹Î¼º, 1: ÅÂ°æ, 2: ¾øÀ½)
-		Loop: for (int i = 0; i < 2; i++) { // ¹Î¼º -> ÅÂ°æ
-			for (int j = 0; j < 2; j++) { // ¿Ş¼Õ -> ¿À¸¥¼Õ
-				char now = mt[i][j]; // ±âÁØ ¼Õ
-				int idx = 1 - i; // ±âÁØ ¼ÕÀ» ³½ »ç¶÷ÀÇ ¹İ´ë »ç¶÷
-				boolean win = true; // ¹«Á¶°Ç ÀÌ±â¸é true
-				for (int k = 0; k < 2; k++) { // ±âÁØ ¼Õ ¹İ´ë »ç¶÷ÀÇ ¿Ş¼Õ -> ¿À¸¥¼Õ
-					// Áö°Å³ª ºñ±â¸é ÀÌ±æ ¼ö ¾øÀ½
+				{ st.nextToken().charAt(0), st.nextToken().charAt(0) } }; // ê°€ìœ„ë°”ìœ„ë³´ ìƒíƒœ
+		int winner = 2; // ë¬´ì¡°ê±´ ì´ê¸°ëŠ” ì‚¬ëŒ (0: ë¯¼ì„±, 1: íƒœê²½, 2: ì—†ìŒ)
+		Loop: for (int i = 0; i < 2; i++) { // ë¯¼ì„± -> íƒœê²½
+			for (int j = 0; j < 2; j++) { // ì™¼ì† -> ì˜¤ë¥¸ì†
+				char now = mt[i][j]; // ê¸°ì¤€ ì†
+				int idx = 1 - i; // ê¸°ì¤€ ì†ì„ ë‚¸ ì‚¬ëŒì˜ ë°˜ëŒ€ ì‚¬ëŒ
+				boolean win = true; // ë¬´ì¡°ê±´ ì´ê¸°ë©´ true
+				for (int k = 0; k < 2; k++) { // ê¸°ì¤€ ì† ë°˜ëŒ€ ì‚¬ëŒì˜ ì™¼ì† -> ì˜¤ë¥¸ì†
+					// ì§€ê±°ë‚˜ ë¹„ê¸°ë©´ ì´ê¸¸ ìˆ˜ ì—†ìŒ
 					if (now == 'R') {
 						if (mt[idx][k] == 'P' || mt[idx][k] == 'R') {
 							win = false;
@@ -36,17 +36,17 @@ public class B16675_µÎ_°³ÀÇ_¼Õ {
 						}
 					}
 				}
-				if (win) { // ¹İ´ë »ç¶÷ÀÇ ¸ğµç ¼ÕÀ» ÀÌ±æ ¼ö ÀÖÀ¸¸é
-					winner = i; // ¿ì½ÂÀÚ´Â ±âÁØ ¼ÕÀ» ³½ »ç¶÷
+				if (win) { // ë°˜ëŒ€ ì‚¬ëŒì˜ ëª¨ë“  ì†ì„ ì´ê¸¸ ìˆ˜ ìˆìœ¼ë©´
+					winner = i; // ìš°ìŠ¹ìëŠ” ê¸°ì¤€ ì†ì„ ë‚¸ ì‚¬ëŒ
 					break Loop;
 				}
 			}
 		}
-		if (winner == 0) { // ¹Î¼º
+		if (winner == 0) { // ë¯¼ì„±
 			System.out.println("MS");
-		} else if (winner == 1) { // ÅÂ°æ
+		} else if (winner == 1) { // íƒœê²½
 			System.out.println("TK");
-		} else { // ¹«Á¶°Ç ÀÌ±æ ¼ö ¾øÀ½
+		} else { // ë¬´ì¡°ê±´ ì´ê¸¸ ìˆ˜ ì—†ìŒ
 			System.out.println("?");
 		}
 		br.close();
