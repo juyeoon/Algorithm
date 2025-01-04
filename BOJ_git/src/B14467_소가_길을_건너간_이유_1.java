@@ -4,28 +4,28 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 // https://www.acmicpc.net/problem/14467
-// ¼ÒÀÇ ¹øÈ£¿¡ ´ëÇØ À§Ä¡¸¦ ÀúÀåÇÏ°í ÀúÀå À§Ä¡°¡ ÀÔ·Â À§Ä¡°¡ ´Ù¸£¸é Ä«¿îÆ®ÈÄ ÀúÀå À§Ä¡ °»½Å
-public class B14467_¼Ò°¡_±æÀ»_°Ç³Ê°£_ÀÌÀ¯_1 {
+// ì†Œì˜ ë²ˆí˜¸ì— ëŒ€í•´ ìœ„ì¹˜ë¥¼ ì €ì¥í•˜ê³  ì €ì¥ ìœ„ì¹˜ê°€ ì…ë ¥ ìœ„ì¹˜ê°€ ë‹¤ë¥´ë©´ ì¹´ìš´íŠ¸í›„ ì €ì¥ ìœ„ì¹˜ ê°±ì‹ 
+public class B14467_ì†Œê°€_ê¸¸ì„_ê±´ë„ˆê°„_ì´ìœ _1 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int N = Integer.parseInt(br.readLine()); // °üÂû È½¼ö
-		int cowloc[] = new int[11]; // ¼ÒÀÇ ÇöÀç À§Ä¡
-		for (int i = 1; i <= 10; i++) { // ÃÊ±âÈ­
+		int N = Integer.parseInt(br.readLine()); // ê´€ì°° íšŸìˆ˜
+		int cowloc[] = new int[11]; // ì†Œì˜ í˜„ì¬ ìœ„ì¹˜
+		for (int i = 1; i <= 10; i++) { // ì´ˆê¸°í™”
 			cowloc[i] = -1;
 		}
-		int cnt = 0; // ¼Ò°¡ ±æ °Ç³Í È½¼ö
+		int cnt = 0; // ì†Œê°€ ê¸¸ ê±´ë„Œ íšŸìˆ˜
 		for (int i = 0; i < N; i++) {
 			StringTokenizer st = new StringTokenizer(br.readLine());
-			int num = Integer.parseInt(st.nextToken()); // ¼Ò ¹øÈ£
-			int loc = Integer.parseInt(st.nextToken()); // ¼Ò À§Ä¡
-			if (cowloc[num] == -1) { // ¼Ò°¡ Ã³À½ µîÀåÇßÀ» ¶§
-				cowloc[num] = loc; // À§Ä¡ ¼³Á¤
-			} else if (cowloc[num] != loc) { // ÀÔ·Â ¹ŞÀº À§Ä¡¿Í ´Ù¸¥ À§Ä¡ÀÏ ¶§ ÀÌµ¿
+			int num = Integer.parseInt(st.nextToken()); // ì†Œ ë²ˆí˜¸
+			int loc = Integer.parseInt(st.nextToken()); // ì†Œ ìœ„ì¹˜
+			if (cowloc[num] == -1) { // ì†Œê°€ ì²˜ìŒ ë“±ì¥í–ˆì„ ë•Œ
+				cowloc[num] = loc; // ìœ„ì¹˜ ì„¤ì •
+			} else if (cowloc[num] != loc) { // ì…ë ¥ ë°›ì€ ìœ„ì¹˜ì™€ ë‹¤ë¥¸ ìœ„ì¹˜ì¼ ë•Œ ì´ë™
 				cnt++;
 				cowloc[num] = loc;
 			}
 		}
-		System.out.println(cnt); // Ãâ·Â
+		System.out.println(cnt); // ì¶œë ¥
 		br.close();
 	}
 }
