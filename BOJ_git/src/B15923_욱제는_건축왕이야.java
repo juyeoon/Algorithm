@@ -4,27 +4,27 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 // https://www.acmicpc.net/problem/15923
-// ¿¬¼ÓµÇ¾î ÀÖ´Â ²ÀÁşÁ¡ÀÌ ÁÖ¾îÁö¹Ç·Î ÀüÈÄÀÇ ²ÀÁşÁ¡ »çÀÌÀÇ °Å¸®¸¦ ±¸ÇØ¼­ ´õÇÏ±â
-// ¸¶Áö¸· ²ÀÁşÁ¡°ú Ã¹¹øÂ° ²ÀÁşÁ¡°úÀÇ °Å¸®µµ Ãß°¡ÇØ¾ß ÇÔ
-public class B15923_¿íÁ¦´Â_°ÇÃà¿ÕÀÌ¾ß {
+// ì—°ì†ë˜ì–´ ìˆëŠ” ê¼­ì§“ì ì´ ì£¼ì–´ì§€ë¯€ë¡œ ì „í›„ì˜ ê¼­ì§“ì  ì‚¬ì´ì˜ ê±°ë¦¬ë¥¼ êµ¬í•´ì„œ ë”í•˜ê¸°
+// ë§ˆì§€ë§‰ ê¼­ì§“ì ê³¼ ì²«ë²ˆì§¸ ê¼­ì§“ì ê³¼ì˜ ê±°ë¦¬ë„ ì¶”ê°€í•´ì•¼ í•¨
+public class B15923_ìš±ì œëŠ”_ê±´ì¶•ì™•ì´ì•¼ {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int N = Integer.parseInt(br.readLine()); // ²ÀÁşÁ¡ °³¼ö
-		int sum = 0; // µÑ·¹
-		int vertex[][] = new int[N][2]; // ²ÀÁşÁ¡ ÁÂÇ¥
+		int N = Integer.parseInt(br.readLine()); // ê¼­ì§“ì  ê°œìˆ˜
+		int sum = 0; // ë‘˜ë ˆ
+		int vertex[][] = new int[N][2]; // ê¼­ì§“ì  ì¢Œí‘œ
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		vertex[0][0] = Integer.parseInt(st.nextToken()); // Ã¹ ¹øÂ° ²ÀÁşÁ¡
+		vertex[0][0] = Integer.parseInt(st.nextToken()); // ì²« ë²ˆì§¸ ê¼­ì§“ì 
 		vertex[0][1] = Integer.parseInt(st.nextToken());
-		for (int i = 1; i < N; i++) { // µÎ ¹øÂ° ²ÀÁşÁ¡ºÎÅÍ ¸¶Áö¸· ²ÀÁşÁ¡±îÁö
+		for (int i = 1; i < N; i++) { // ë‘ ë²ˆì§¸ ê¼­ì§“ì ë¶€í„° ë§ˆì§€ë§‰ ê¼­ì§“ì ê¹Œì§€
 			st = new StringTokenizer(br.readLine());
-			vertex[i][0] = Integer.parseInt(st.nextToken()); // i¹øÂ° ²ÀÁşÁ¡
+			vertex[i][0] = Integer.parseInt(st.nextToken()); // ië²ˆì§¸ ê¼­ì§“ì 
 			vertex[i][1] = Integer.parseInt(st.nextToken());
-			// i¹øÂ° ²ÀÁşÁ¡°ú ±× ÀÌÀü ²ÀÁşÁ¡ »çÀÌÀÇ °Å¸®¸¦ ´õÇÔ
+			// ië²ˆì§¸ ê¼­ì§“ì ê³¼ ê·¸ ì´ì „ ê¼­ì§“ì  ì‚¬ì´ì˜ ê±°ë¦¬ë¥¼ ë”í•¨
 			sum += Math.abs(vertex[i][0] - vertex[i - 1][0] + vertex[i][1] - vertex[i - 1][1]);
 		}
-		// ¸¶Áö¸· ²ÀÁşÁ¡°ú Ã¹¹øÂ° ²ÀÁşÁ¡ »çÀÌÀÇ °Å¸®¸¦ ´õÇÔ
+		// ë§ˆì§€ë§‰ ê¼­ì§“ì ê³¼ ì²«ë²ˆì§¸ ê¼­ì§“ì  ì‚¬ì´ì˜ ê±°ë¦¬ë¥¼ ë”í•¨
 		sum += Math.abs(vertex[0][0] - vertex[N - 1][0] + vertex[0][1] - vertex[N - 1][1]);
-		System.out.println(sum); // Ãâ·Â
+		System.out.println(sum); // ì¶œë ¥
 		br.close();
 	}
 }
