@@ -4,26 +4,26 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 // https://www.acmicpc.net/problem/16503
-// ÇÇ¿¬»êÀÚ 2°³, ¿¬»êÀÚ 1°³·Î ¿¬»êÇÏ´Â ÇÔ¼ö¸¦ ¸¸µç ´ÙÀ½ °ıÈ£ ¼ø¼­¿¡ ¸Â°Ô È£ÃâÇÏ¿© °á°ú µµÃâ
-public class B16503_°ıÈ£_¾ø´Â_»çÄ¢¿¬»ê {
+// í”¼ì—°ì‚°ì 2ê°œ, ì—°ì‚°ì 1ê°œë¡œ ì—°ì‚°í•˜ëŠ” í•¨ìˆ˜ë¥¼ ë§Œë“  ë‹¤ìŒ ê´„í˜¸ ìˆœì„œì— ë§ê²Œ í˜¸ì¶œí•˜ì—¬ ê²°ê³¼ ë„ì¶œ
+public class B16503_ê´„í˜¸_ì—†ëŠ”_ì‚¬ì¹™ì—°ì‚° {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		int K1 = Integer.parseInt(st.nextToken()); // ÇÇ¿¬»êÀÚ 1
-		char O1 = st.nextToken().charAt(0); // ¿¬»êÀÚ 1
-		int K2 = Integer.parseInt(st.nextToken()); // ÇÇ¿¬»êÀÚ 2
-		char O2 = st.nextToken().charAt(0); // ¿¬»êÀÚ 2
-		int K3 = Integer.parseInt(st.nextToken()); // ÇÇ¿¬»êÀÚ 3
+		int K1 = Integer.parseInt(st.nextToken()); // í”¼ì—°ì‚°ì 1
+		char O1 = st.nextToken().charAt(0); // ì—°ì‚°ì 1
+		int K2 = Integer.parseInt(st.nextToken()); // í”¼ì—°ì‚°ì 2
+		char O2 = st.nextToken().charAt(0); // ì—°ì‚°ì 2
+		int K3 = Integer.parseInt(st.nextToken()); // í”¼ì—°ì‚°ì 3
 		int ans1 = calc(calc(K1, O1, K2), O2, K3); // (K1 O1 K2) O2 K3
 		int ans2 = calc(K1, O1, calc(K2, O2, K3)); // K1 O1 (K2 O2 K3)
-		sb.append(Math.min(ans1, ans2)).append("\n").append(Math.max(ans1, ans2)); // ÃÖ¼Ò ÃÖ´ë Ãâ·Â
+		sb.append(Math.min(ans1, ans2)).append("\n").append(Math.max(ans1, ans2)); // ìµœì†Œ ìµœëŒ€ ì¶œë ¥
 		System.out.println(sb);
 		br.close();
 	}
 
-	public static int calc(int a, char c, int b) { // °è»ê
-		int ret = 0; // ¿¬»ê °á°ú
+	public static int calc(int a, char c, int b) { // ê³„ì‚°
+		int ret = 0; // ì—°ì‚° ê²°ê³¼
 		if (c == '+') { // +
 			ret = a + b;
 		} else if (c == '-') { // -
