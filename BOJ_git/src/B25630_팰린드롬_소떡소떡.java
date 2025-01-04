@@ -3,24 +3,24 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 // https://www.acmicpc.net/problem/25630
-// ÆÓ¸°µå·ÒÀÌ µÇ·Á¸é ¾Õ¿¡¼­ Ã¹¹øÂ°, µÚ¿¡¼­ Ã¹¹øÂ° ¹®ÀÚ°¡ °°¾Æ¾ß ÇÏ°í ¾Õ¿¡¼­ µÎ¹øÂ°, µÚ¿¡¼­ µÎ¹øÂ° ¹®ÀÚ°¡ °°Àº ½ÄÀ¸·Î
-// ÁøÇàµÇ¾î¾ß ÇÏ¹Ç·Î °¢ À§Ä¡ÀÇ ¹®ÀÚ°¡ °°Áö ¾ÊÀº °³¼ö¸¦ Ãâ·Â
-public class B25630_ÆÓ¸°µå·Ò_¼Ò¶±¼Ò¶± {
+// íŒ°ë¦°ë“œë¡¬ì´ ë˜ë ¤ë©´ ì•ì—ì„œ ì²«ë²ˆì§¸, ë’¤ì—ì„œ ì²«ë²ˆì§¸ ë¬¸ìê°€ ê°™ì•„ì•¼ í•˜ê³  ì•ì—ì„œ ë‘ë²ˆì§¸, ë’¤ì—ì„œ ë‘ë²ˆì§¸ ë¬¸ìê°€ ê°™ì€ ì‹ìœ¼ë¡œ
+// ì§„í–‰ë˜ì–´ì•¼ í•˜ë¯€ë¡œ ê° ìœ„ì¹˜ì˜ ë¬¸ìê°€ ê°™ì§€ ì•Šì€ ê°œìˆ˜ë¥¼ ì¶œë ¥
+public class B25630_íŒ°ë¦°ë“œë¡¬_ì†Œë–¡ì†Œë–¡ {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
-		char c[] = br.readLine().toCharArray(); // ¼Ò¶±¼Ò¶± ¹è¿­
-		int front = 0; // ¾Õ ÀÎµ¦½º
-		int back = N - 1; // µÚ ÀÎµ¦½º
-		int cnt = 0; // ¹Ù²ã¾ß ÇÏ´Â °³¼ö
+		char c[] = br.readLine().toCharArray(); // ì†Œë–¡ì†Œë–¡ ë°°ì—´
+		int front = 0; // ì• ì¸ë±ìŠ¤
+		int back = N - 1; // ë’¤ ì¸ë±ìŠ¤
+		int cnt = 0; // ë°”ê¿”ì•¼ í•˜ëŠ” ê°œìˆ˜
 		while (front < back) { //
-			if (c[front] != c[back]) { // À§Ä¡ÀÇ ¹®ÀÚµéÀÌ °°Áö ¾ÊÀ¸¸é Ä«¿îÆ®
+			if (c[front] != c[back]) { // ìœ„ì¹˜ì˜ ë¬¸ìë“¤ì´ ê°™ì§€ ì•Šìœ¼ë©´ ì¹´ìš´íŠ¸
 				cnt++;
 			}
 			front++;
 			back--;
 		}
-		System.out.println(cnt); // Ãâ·Â
+		System.out.println(cnt); // ì¶œë ¥
 		br.close();
 	}
 }
