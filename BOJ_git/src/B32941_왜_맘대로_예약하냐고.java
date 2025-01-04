@@ -4,33 +4,33 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 // https://www.acmicpc.net/problem/32941
-// boolean º¯¼ö¸¦ »ç¿ëÇØ¼­ °Ç¿ì°¡ ¿¹¾àÇÑ ±³½Ã¿¡ ¸ğµç Á¶¿øÀÌ Âü¼®ÇÒ ¼ö ÀÖ´ÂÁö È®ÀÎ
-// °¢ Á¶¿øÀÌ °¡´ÉÇÑ ±³½Ã¿¡ °Ç¿ì°¡ ¿¹¾àÇÑ ±³½Ã°¡ ¾øÀ¸¸é ¸ğµç Á¶¿ø Âü¼® ºÒ°¡
-// ÀÖÀ¸¸é ´ÙÀ½ Á¶¿ø È®ÀÎ
-public class B32941_¿Ö_¸¾´ë·Î_¿¹¾àÇÏ³Ä°í {
+// boolean ë³€ìˆ˜ë¥¼ ì‚¬ìš©í•´ì„œ ê±´ìš°ê°€ ì˜ˆì•½í•œ êµì‹œì— ëª¨ë“  ì¡°ì›ì´ ì°¸ì„í•  ìˆ˜ ìˆëŠ”ì§€ í™•ì¸
+// ê° ì¡°ì›ì´ ê°€ëŠ¥í•œ êµì‹œì— ê±´ìš°ê°€ ì˜ˆì•½í•œ êµì‹œê°€ ì—†ìœ¼ë©´ ëª¨ë“  ì¡°ì› ì°¸ì„ ë¶ˆê°€
+// ìˆìœ¼ë©´ ë‹¤ìŒ ì¡°ì› í™•ì¸
+public class B32941_ì™œ_ë§˜ëŒ€ë¡œ_ì˜ˆì•½í•˜ëƒê³  {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		int T = Integer.parseInt(st.nextToken()); // ±³½ÇÀ» ¿¹¾àÇÒ ¼ö ÀÖ´Â ±³½ÃÀÇ °³¼ö
-		int X = Integer.parseInt(st.nextToken()); // °Ç¿ì°¡ ¿¹¾àÇÑ ±³½Ã
-		int N = Integer.parseInt(br.readLine()); // Á¶¿øÀÇ ¼ö
-		boolean possible = true; // °Ç¿ì°¡ ¿¹¾àÇÑ ±³½Ã¿¡ ¸ğµç Á¶¿øÀÌ Âü¼®ÇÒ ¼ö ÀÖ´ÂÁö (true: °¡´É)
+		int T = Integer.parseInt(st.nextToken()); // êµì‹¤ì„ ì˜ˆì•½í•  ìˆ˜ ìˆëŠ” êµì‹œì˜ ê°œìˆ˜
+		int X = Integer.parseInt(st.nextToken()); // ê±´ìš°ê°€ ì˜ˆì•½í•œ êµì‹œ
+		int N = Integer.parseInt(br.readLine()); // ì¡°ì›ì˜ ìˆ˜
+		boolean possible = true; // ê±´ìš°ê°€ ì˜ˆì•½í•œ êµì‹œì— ëª¨ë“  ì¡°ì›ì´ ì°¸ì„í•  ìˆ˜ ìˆëŠ”ì§€ (true: ê°€ëŠ¥)
 		for (int i = 0; i < N; i++) {
-			int K = Integer.parseInt(br.readLine()); // Á¶¿øÀÌ ¿¹¾àÇÒ ¼ö ÀÖ´Â ±³½ÃÀÇ °³¼ö
+			int K = Integer.parseInt(br.readLine()); // ì¡°ì›ì´ ì˜ˆì•½í•  ìˆ˜ ìˆëŠ” êµì‹œì˜ ê°œìˆ˜
 			st = new StringTokenizer(br.readLine());
-			boolean exist = false; // ÇØ´ç Á¶¿øÀÌ °Ç¿ì°¡ ¿¹¾àÇÑ ±³½Ã¿¡ Âü¼®ÇÒ ¼ö ÀÖ´ÂÁö (true: °¡´É)
+			boolean exist = false; // í•´ë‹¹ ì¡°ì›ì´ ê±´ìš°ê°€ ì˜ˆì•½í•œ êµì‹œì— ì°¸ì„í•  ìˆ˜ ìˆëŠ”ì§€ (true: ê°€ëŠ¥)
 			for (int j = 0; j < K; j++) {
-				if (Integer.parseInt(st.nextToken()) == X) { // Á¸ÀçÇÏ¸é
-					exist = true; // Âü¼® °¡´É
+				if (Integer.parseInt(st.nextToken()) == X) { // ì¡´ì¬í•˜ë©´
+					exist = true; // ì°¸ì„ ê°€ëŠ¥
 					break;
 				}
 			}
-			if (!exist) { // Á¸ÀçÇÏÁö ¾ÊÀ¸¸é
-				possible = false; // ¸ğµç Á¶¿ø Âü¼® ºÒ°¡
+			if (!exist) { // ì¡´ì¬í•˜ì§€ ì•Šìœ¼ë©´
+				possible = false; // ëª¨ë“  ì¡°ì› ì°¸ì„ ë¶ˆê°€
 				break;
 			}
 		}
-		System.out.println(possible ? "YES" : "NO"); // Ãâ·Â
+		System.out.println(possible ? "YES" : "NO"); // ì¶œë ¥
 		br.close();
 	}
 }
