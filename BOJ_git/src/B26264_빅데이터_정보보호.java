@@ -3,15 +3,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 // https://www.acmicpc.net/problem/26264
-// 's'¿Í 'b'´Â °¢ ´Ü¾î¿¡ ÇÑ ¹ø¾¿¸¸ µé¾î°¡±â ¶§¹®¿¡ ÇØ´ç ¹®ÀÚÀÇ µîÀå È½¼ö¸¦ Ä«¿îÆ®ÇØ¼­
-// °³¼ö¿¡ ¸Â°Ô ºñ±³ÇÏ¿© Ãâ·Â
-public class B26264_ºòµ¥ÀÌÅÍ_Á¤º¸º¸È£ {
+// 's'ì™€ 'b'ëŠ” ê° ë‹¨ì–´ì— í•œ ë²ˆì”©ë§Œ ë“¤ì–´ê°€ê¸° ë•Œë¬¸ì— í•´ë‹¹ ë¬¸ìì˜ ë“±ì¥ íšŸìˆ˜ë¥¼ ì¹´ìš´íŠ¸í•´ì„œ
+// ê°œìˆ˜ì— ë§ê²Œ ë¹„êµí•˜ì—¬ ì¶œë ¥
+public class B26264_ë¹…ë°ì´í„°_ì •ë³´ë³´í˜¸ {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
-		String s = br.readLine(); // ÀÔ·Â ¹®ÀÚ¿­
-		int sCnt = 0; // security °³¼ö
-		int bCnt = 0; // bigdata °³¼ö
+		String s = br.readLine(); // ì…ë ¥ ë¬¸ìì—´
+		int sCnt = 0; // security ê°œìˆ˜
+		int bCnt = 0; // bigdata ê°œìˆ˜
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
 			if (c == 's') { // security
@@ -20,11 +20,11 @@ public class B26264_ºòµ¥ÀÌÅÍ_Á¤º¸º¸È£ {
 				bCnt++;
 			}
 		}
-		if (sCnt > bCnt) { // security°¡ ´õ ¸¹À½
+		if (sCnt > bCnt) { // securityê°€ ë” ë§ìŒ
 			System.out.println("security!");
-		} else if (sCnt < bCnt) { // bigdata°¡ ´õ ¸¹À½
+		} else if (sCnt < bCnt) { // bigdataê°€ ë” ë§ìŒ
 			System.out.println("bigdata?");
-		} else { // °³¼ö°¡ °°À½
+		} else { // ê°œìˆ˜ê°€ ê°™ìŒ
 			System.out.println("bigdata? security!");
 		}
 		br.close();
