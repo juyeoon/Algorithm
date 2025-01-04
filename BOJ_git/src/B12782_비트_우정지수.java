@@ -4,21 +4,21 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 // https://www.acmicpc.net/problem/12782
-// ¿ìÁ¤ Áö¼ö = ¼ıÀÚ¸¦ ¹Ù²ã¾ß ÇÏ´Â °³¼ö + (ÀÚ¸®¸¦ ¹Ù²ã¾ß ÇÏ´Â °³¼ö / 2)
-// = |(NÀÇ 1ÀÇ °³¼ö - MÀÇ 1ÀÇ °³¼ö)| + (°ªÀÌ ´Ù¸¥ ÀÚ¸® ¼ö °³¼ö - ¼ıÀÚ¸¦ ¹Ù²ã¾ß ÇÏ´Â °³¼ö) / 2
-public class B12782_ºñÆ®_¿ìÁ¤Áö¼ö {
+// ìš°ì • ì§€ìˆ˜ = ìˆ«ìë¥¼ ë°”ê¿”ì•¼ í•˜ëŠ” ê°œìˆ˜ + (ìë¦¬ë¥¼ ë°”ê¿”ì•¼ í•˜ëŠ” ê°œìˆ˜ / 2)
+// = |(Nì˜ 1ì˜ ê°œìˆ˜ - Mì˜ 1ì˜ ê°œìˆ˜)| + (ê°’ì´ ë‹¤ë¥¸ ìë¦¬ ìˆ˜ ê°œìˆ˜ - ìˆ«ìë¥¼ ë°”ê¿”ì•¼ í•˜ëŠ” ê°œìˆ˜) / 2
+public class B12782_ë¹„íŠ¸_ìš°ì •ì§€ìˆ˜ {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
-		int T = Integer.parseInt(br.readLine()); // Å×½ºÆ® ÄÉÀÌ½º
+		int T = Integer.parseInt(br.readLine()); // í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤
 		for (int tc = 0; tc < T; tc++) {
 			StringTokenizer st = new StringTokenizer(br.readLine());
-			char N[] = st.nextToken().toCharArray(); // Ã¹¹øÂ° ÀÌÁø¼ö
-			char M[] = st.nextToken().toCharArray(); // µÎ¹øÂ° ÀÌÁø¼ö
-			int cntOneN = 0; // Ã¹¹øÂ° ÀÌÁø¼öÀÇ 1ÀÇ °³¼ö
-			int cntOneM = 0; // µÎ¹øÂ° ÀÌÁø¼öÀÇ 1ÀÇ °³¼ö
-			int diffCnt = 0; // °°Àº ÀÚ¸® ¼öÀÇ °ªÀÌ ´Ù¸¥ ÀÚ¸® ¼öÀÇ °³¼ö
-			for (int i = 0; i < M.length; i++) { // °¢ º¯¼ö °ª ±¸ÇÏ±â
+			char N[] = st.nextToken().toCharArray(); // ì²«ë²ˆì§¸ ì´ì§„ìˆ˜
+			char M[] = st.nextToken().toCharArray(); // ë‘ë²ˆì§¸ ì´ì§„ìˆ˜
+			int cntOneN = 0; // ì²«ë²ˆì§¸ ì´ì§„ìˆ˜ì˜ 1ì˜ ê°œìˆ˜
+			int cntOneM = 0; // ë‘ë²ˆì§¸ ì´ì§„ìˆ˜ì˜ 1ì˜ ê°œìˆ˜
+			int diffCnt = 0; // ê°™ì€ ìë¦¬ ìˆ˜ì˜ ê°’ì´ ë‹¤ë¥¸ ìë¦¬ ìˆ˜ì˜ ê°œìˆ˜
+			for (int i = 0; i < M.length; i++) { // ê° ë³€ìˆ˜ ê°’ êµ¬í•˜ê¸°
 				if (N[i] == '1') {
 					cntOneN++;
 				}
@@ -29,10 +29,10 @@ public class B12782_ºñÆ®_¿ìÁ¤Áö¼ö {
 					diffCnt++;
 				}
 			}
-			// ¿ìÁ¤ Áö¼ö = ¼ıÀÚ¸¦ ¹Ù²ã¾ß ÇÏ´Â °³¼ö + (ÀÚ¸®¸¦ ¹Ù²ã¾ß ÇÏ´Â °³¼ö / 2)
+			// ìš°ì • ì§€ìˆ˜ = ìˆ«ìë¥¼ ë°”ê¿”ì•¼ í•˜ëŠ” ê°œìˆ˜ + (ìë¦¬ë¥¼ ë°”ê¿”ì•¼ í•˜ëŠ” ê°œìˆ˜ / 2)
 			sb.append(Math.abs(cntOneN - cntOneM) + (diffCnt - Math.abs(cntOneN - cntOneM)) / 2).append("\n");
 		}
-		System.out.println(sb); // Ãâ·Â
+		System.out.println(sb); // ì¶œë ¥
 		br.close();
 	}
 }
