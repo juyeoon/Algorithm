@@ -3,14 +3,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 // https://www.acmicpc.net/problem/32246
-// NÀÌ 3 ÀÌ»óÀÌ¸é Ã¹¹øÂ° Ä­°ú ¸¶Áö¸· Ä­À» Ä¥ÇÏ°í °¡¿îµ¥ ÁÙÀº '/'ÇüÅÂ·Î ´ë°¢¼±¿¡ Ä¥ÇÏ¸é µÊ => NÄ­
-// NÀÌ 1ÀÌ¸é ÇÑ Ä­ Ä¥ÇÏ±â => NÄ­
-// NÀÌ 2ÀÌ¸é  Ã¹¹øÂ° Ä­°ú ¸¶Áö¸· Ä­À» Ä¥ÇÏ¸é '/' ´ë°¢¼Ç¿¡´Â »öÀÌ ¾ø±â ¶§¹®¿¡ ÇÑ Ä­À» ´õ Ä¥ÇØÁà¾ß ÇÔ => 3Ä­
-public class B32246_ºù°í_¸·±â {
+// Nì´ 3 ì´ìƒì´ë©´ ì²«ë²ˆì§¸ ì¹¸ê³¼ ë§ˆì§€ë§‰ ì¹¸ì„ ì¹ í•˜ê³  ê°€ìš´ë° ì¤„ì€ '/'í˜•íƒœë¡œ ëŒ€ê°ì„ ì— ì¹ í•˜ë©´ ë¨ => Nì¹¸
+// Nì´ 1ì´ë©´ í•œ ì¹¸ ì¹ í•˜ê¸° => Nì¹¸
+// Nì´ 2ì´ë©´  ì²«ë²ˆì§¸ ì¹¸ê³¼ ë§ˆì§€ë§‰ ì¹¸ì„ ì¹ í•˜ë©´ '/' ëŒ€ê°ì…˜ì—ëŠ” ìƒ‰ì´ ì—†ê¸° ë•Œë¬¸ì— í•œ ì¹¸ì„ ë” ì¹ í•´ì¤˜ì•¼ í•¨ => 3ì¹¸
+public class B32246_ë¹™ê³ _ë§‰ê¸° {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
-		System.out.println(N == 2 ? 3 : N); // 2Ä­ÀÏ ¶§¸¸ ´Ù¸£°Ô Ãâ·Â
+		System.out.println(N == 2 ? 3 : N); // 2ì¹¸ì¼ ë•Œë§Œ ë‹¤ë¥´ê²Œ ì¶œë ¥
 		br.close();
 	}
 }
