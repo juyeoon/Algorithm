@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 // 2. 옆으로 넘길 사탕의 수 구하기
 // 3. 사탕 넘기기
 // 4. 홀수 처리
-public class Main {
+public class B9037_The_candy_war {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
