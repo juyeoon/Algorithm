@@ -43,7 +43,7 @@ public class B31628_가지_한_두름_주세요 {
 				}
 			}
 		}
-		System.out.println(yes ? 1 : 0); // 출력
+		System.out.println(yes ? 1 : 0); // 출력 
 		br.close();
 	}
 }
