@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 
 // https://www.acmicpc.net/problem/31831
 // 오늘의 스트레스의 양을 저장한 후 스트레스 변화량에 따라 스트레스 양을 갱신한 후 복통 여부 확인
-public class Main {
+public class B31831_과민성_대장_증후군 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
