@@ -62,6 +62,6 @@ public class B2630_색종이_만들기 {
 				}
 			}
 		}
-		return true; // 색상이 같음 않음
+		return true; // 색상이 같음 않음.
 	}
 }
