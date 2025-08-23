@@ -9,21 +9,21 @@ import java.io.InputStreamReader;
 public class B24198_Muffinspelet {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine()); // 머핀 개수
-        long alf = 0; // Alf가 먹은 양 
-        long beata = 0; // Beata가 먹은 양
-        boolean beataTurn = true; // 먹는 사람이 누군지 표시 (true: Beata가 먹음)
-        while (N > 0) {
-            int eat = (N + 1) / 2; // 이번에 먹는 양
-            if (beataTurn) { // 먹는 사람이 Beata면
-                beata += eat;
-            } else {
-                alf += eat;
-            }
-            beataTurn = !beataTurn; // 역할 바꾸기
-             N = N / 2; // 이번에 먹은 양 빼기
-        }
-        System.out.println(alf + " " + beata); // 출력
+		int N = Integer.parseInt(br.readLine()); // 머핀 개수
+		long alf = 0; // Alf가 먹은 양
+		long beata = 0; // Beata가 먹은 양
+		boolean beataTurn = true; // 먹는 사람이 누군지 표시 (true: Beata가 먹음)
+		while (N > 0) {
+			int eat = (N + 1) / 2; // 이번에 먹는 양
+			if (beataTurn) { // 먹는 사람이 Beata면
+				beata += eat;
+			} else {
+				alf += eat;
+			}
+			beataTurn = !beataTurn; // 역할 바꾸기
+			N = N / 2; // 이번에 먹은 양 빼기
+		}
+		System.out.println(alf + " " + beata); // 출력
 		br.close();
 	}
 }
