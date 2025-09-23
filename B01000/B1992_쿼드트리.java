@@ -29,7 +29,6 @@ public class B1992_쿼드트리 {
 		String rightTop = dc(x, y + newSize, newSize); // 오른쪽 위
 		String leftBottom = dc(x + newSize, y, newSize); // 왼쪽 아래
 		String rightBottom = dc(x + newSize, y + newSize, newSize); // 오른쪽 아래
-
 		return "(" + leftTop + rightTop + leftBottom + rightBottom + ")"; // 분할한 값 합치기
 	}
 

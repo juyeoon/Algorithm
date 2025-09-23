@@ -16,7 +16,8 @@ public class B1440_타임머신 {
 			values[i] = st.nextToken();
 		}
 		int cnt = 0; // 가능한 시간 해석 방법의 수
-		int[][] perm = { { 0, 1, 2 }, { 0, 2, 1 }, { 1, 0, 2 }, { 1, 2, 0 }, { 2, 0, 1 }, { 2, 1, 0 } }; // 가능한 시, 분, 초의 순열 (인덱스)
+		// 가능한 시, 분, 초의 순열 (인덱스)
+		int[][] perm = { { 0, 1, 2 }, { 0, 2, 1 }, { 1, 0, 2 }, { 1, 2, 0 }, { 2, 0, 1 }, { 2, 1, 0 } };
 		for (int[] p : perm) { // 각 순열에 대해 유효한 시간인지 검사
 			int h = Integer.parseInt(values[p[0]]);
 			int m = Integer.parseInt(values[p[1]]);
