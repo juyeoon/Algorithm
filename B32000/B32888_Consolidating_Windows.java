@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.math.BigInteger;
 import java.util.StringTokenizer;
 
-// 32888 - Consolidating Windows
+// 32888 - Consolidating Windows 
 // https://www.acmicpc.net/problem/32888
 public class B32888_Consolidating_Windows {
 	public static void main(String[] args) throws IOException {
